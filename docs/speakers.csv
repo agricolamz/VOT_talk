@@ -1,66 +1,117 @@
-Language,Branch,Location,lat,lon,Speaker,Age,Gender,Native language,Bilingualism,Mobility,File name / Link to the sound file,Format of the recording,Annotation,Annotation tiers,Item / carrier phrase,Annotator
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Shamil Mazhirovich,1946,m,,,,,informant,"yes, but VOT segmentation and names for the fragments not for every word","words, sounds, stops, comments, transcription","3 i , 1 c",
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zulumhan Esen ulatovich Saidov,1955,m,,,,,informant,"yes, but no VOT segmentation","words, sounds, transcription, labels","3 i , 1 c",
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Halilla Saipujev,1963,m,,,,,informant,"yes, but no VOT segmentation","words, sounds, murkup, transcription, labels","3 i , 1 c",
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Mirzahan,1965,m,,,,,word,,,"3 i , 1 c",
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ozdenaj,1966,f,,,,,informant,"yes, but VOT segmentation and names for the fragments not for every word","words, sounds, stops, (comments), transcription","3 i , 1 c",
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zumrud,1971,f,,,,,informant,"yes, but no VOT segmentation","words, sounds, transcription, labels","3 i , 1 c",
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ubajdat,1985,f,,,,,informant,"yes, but no VOT segmentation","words, sounds, transcription, labels","3 i , 1 c",
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Муртузов Омар-Асхаб Магомедович,1959,m,,,,1959_m_Murtuzov_OM,informant,"yes, full",,,Vasilisa
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Хасиева Айшат Камиловна,1961,f,,,,1961_f_Khasieva_AK,informant,in progress,,,Viola
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Сагитов Насиб Магомедович,1977,m,,,,1977_m_Sagitov_NM,informant,"yes, short",,,Vasilisa
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Магомедова Патимат Юсоповна,1978,f,,,,1978_f_Magomedova_PJ,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Хизбулаева Аминат Хизриевна,1978,f,,,,1978_f_Khizbulaeva_AKh,informant,"yes, full",,,Artem
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Хасулбеков Адильгерей Магомедович,1983,m,,,,1983_m_Khasulbekov_AM,informant,in progress,,,Inna
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Исрапилова Гулишат Магомедовна,1985,f,,,,1985_f_Israpilova_GM,informant,in progress,,,Garik
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Зелимов Али Магомедович,1986,m,,,,1986_m_Zelimov_AM,informant,"yes, short, in progress",,,Aigul
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Магомедова Заира Казбековна,1988,f,,,,1988_f_Magomedova_ZK,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Гереева Мадина Хабибовна,1993,f,,,,1993_f_Gereeva_MCh,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Магомедова Патимат Алигаджиевна,1993,f,,,,1993_f_Magomedova_PA,informant,"yes, full",,,Artem
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Магомедов Хабиб Шахбанович,1993,m,,,,1993_m_Magomedov_KhSh,informant,"yes, full",,,Vasilisa
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Расулов Муса Сулейманович,1994,m,,,,1994_m_Rasulov_MS,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Муртазалиев Артур Исрапилович,1996,m,,,,1996_m_Murtazaliev_AI,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Хизбулаева Аминат Магамед-Саидовна,1997,f,,,,1997_f_Khizbulaeva_AM,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Магомедов Курбан Алигаджиевич,2000,m,,,,2000_m_Magomedov_KA,informant,,,,
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Гасанова Задай Магомедовна,2000,f,,,,2000_f_Gasanova_ZM,informant,"yes, full",,,Artem
-Andi,Avar-Andic,Zilo,42.73167,46.31861,Исрапилов Рамазан Шахбанович,2000,m,,,,2000_m_Israpilov_RSh,informant,in progress,,,Kostya
-Archi,Lezgic,Archi,42.0647,46.868,JSP (Юсуп),1925,m,,,,,informant,yes (to check),"Orthographic-e, Phones, Stops, Phonemic-acc, Phonetic-acc, Russian, Notes-RI, Notes, ID",2 i,
-Archi,Lezgic,Archi,42.0647,46.868,PSX (Пасихат),1945,f,,,,,informant,yes (to check),"Phonetic-acc, Phones, Explosion, Phonemic-acc, IS, Russian, Notes-EG",2 i,
-Archi,Lezgic,Archi,42.0647,46.868,BTA (Бутта),1965,m,,,,,to be prepared,,,,
-Archi,Lezgic,Archi,42.0647,46.868,HMR (Хаджимурат),1965,m,,,,,to be prepared,,,,
-Archi,Lezgic,Archi,42.0647,46.868,"HDK (= HDJ, Хадижат) из Кубатля",1970,f,,,,,informant,"yes, but no VOT?","ID, Orthographic-e, Phonemic-acc, Phonetic-acc, Russian, Notes-RI, Phones, Stops",2 i,Aigul
-Archi,Lezgic,Archi,42.0647,46.868,KVS (Кавсарат),1970,f,,,,,to be prepared,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Sulejban,1950,m,,,,"jvg_stops_sulejban0, jvg_stops_sulejban",informant,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Ajshat,1953,m,,,,jvg_stops_ajshat,informant,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Rajab,1954,m,,,,jvg_stops_rajab,informant,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Magomet,1955,m,,,,jvg_stops_magomet_gulejman,informant,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Zumrud,1974,f,,,,jvg_stops_zumrud,informant,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Gulejman,1983,f,,,,jvg_stops_magomet_gulejman,informant,,,,
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Hadizhat,,f,,,,"jvg_stops_hadizhat0, jvg_stops_hadizhat",informant,,,,
-Lak,Lak,Balkhar,42.27750,47.23056,Xamis,1943,f,,,,,informant,yes,"words, sounds, stops, notes, transcription, labels","3 i , 1 c",
-Lak,Lak,Balkhar,42.27750,47.23056,Sulejman,1969,m,,,,,informant,yes,"words, sounds, stops, notes, transcription, labels","3 i , 1 c",
-Lak,Lak,Balkhar,42.27750,47.23056,Mahamad,,m,,,,,informant,yes,"words, sounds, stops, notes, transcription, labels","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Pat1imat Tagirovna,1949,f,,,,,word (but one annotation),"yes, but VOT segmentation not for every word","words, sounds, stops, notes, transcription, labels","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Murtuz,1959,m,,,,,word (but one annotation),"yes, but VOT segmentation not for every word","words, sounds, stops, notes, transcription, labels","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Israpil,1979,m,,,,,word,"yes, but VOT segmentation not for every word","words, sounds, stops, comments, labels","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Abakalla Pat'imat,1994,f,,,,,informant,"yes, but VOT segmentation not for every word","words, sounds, stops, comments, labels","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Xanchik,1994,m,,,,,word (but one annotation),"yes, but VOT segmentation not for every word","words, sounds, stops, notes, transcription, labels","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Kazim,1955,m,,,,,informant,"yes, but VOT segmentation not for every word","words, sounds, stops, notes, different words","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Damadanova A,1996,f,,,,,informant,only 'labels' tier,"1, 2, 3","3 i , 1 c",
-Dargwa,Dargwa,Mehweb,42.24,47.04833,Damadanova B,1957,f,,,,,informant,only 'labels' tier,"1, 2, 3","3 i , 1 c",
-Rutul,Lezgic,Kina,41.61667,47.26722,Шакир,1960,m,,,,,informant,"yes, full",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Магомет,1973,m,,,,,informant,"yes, full",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Sara,1979,f,,,,160718_0560-0625,word,"yes, but labels not for every word","words, sounds, stops, comms, transcriptions",,Viola
-Rutul,Lezgic,Kina,41.61667,47.26722,Давид,1992,m,,,,,informant,"yes, short, in progress",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Эсмира,1992,f,,,,,informant,"yes, full","CD/VOT, words, sounds, transcription, labels, pr_typ","3 i , 1 c",Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Джавид,1993,m,,,,,informant,"yes, full",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Кафлан,1993,m,,,,,informant,"yes, full","CD/VOT, words, sounds, transcription, labels, pr_typ","3 i , 1 c",Aigul
-Rutul,Lezgic,Kina,41.61667,47.26722,Наргиз,1999,f,,,,,informant,in progress,,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Саади,1999,m,,,,,informant,"yes, full",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Maria,2001,f,,,,,informant,"yes, full",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Айдимиз,,f,,,,,informant,"yes, full",,,Vasilisa
-Rutul,Lezgic,Kina,41.61667,47.26722,Саид,1975,m,,,,,informant,"yes, full","CD/VOT, words, sounds, transcription, labels, pr_typ","3 i , 1 c",Vasilisa
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Bagandalieva,1967,f,,,,echo,informant,yes,"1, sounds, 2, (comments), 3","3 i , 1 c",
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Magomedov,1949,m,,,,echo,informant,yes,"words, sounds, stops, notes, difwords","3 i , 1 c",
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Makhdiev,1963,m,,,,echo,informant,yes,"1, sounds, 2, notes, 3","3 i , 1 c",
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Murtuzalieva,1975,f,,,,echo,informant,yes,"1, sounds, 2, comments, 3","3 i , 1 c",
+Language,Branch,Location,lat,lon,Speaker,Age,Gender
+Archi,Lezgic,Archi,42.0647,46.868,JSP (Юсуп),1925,m
+Archi,Lezgic,Archi,42.0647,46.868,PSX (Пасихат),1945,f
+Archi,Lezgic,Archi,42.0647,46.868,BTA (Бутта),1965,m
+Archi,Lezgic,Archi,42.0647,46.868,HMR (Хаджимурат),1965,m
+Archi,Lezgic,Archi,42.0647,46.868,"HDK (= HDJ, Хадижат) из Кубатля",1970,f
+Archi,Lezgic,Archi,42.0647,46.868,KVS (Кавсарат),1970,f
+Lak,Lak,Balkhar,42.27750,47.23056,Xamis,1943,f
+Lak,Lak,Balkhar,42.27750,47.23056,Sulejman,1969,m
+Lak,Lak,Balkhar,42.27750,47.23056,Mahamad,,m
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Patimat,1958,f
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Marzijat,1965,f
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Batir,1981,m
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Zubair,,m
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Magomedov,1949,m
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Makhdiev,1963,m
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Bagandalieva,1967,f
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Murtuzalieva,1975,f
+Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Nurula,1957,m
+Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Tarlan,1989,m
+Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Murad,1996,m
+Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Abduragim,,m
+Lezgian,Lezgic,Hlut,41.48,47.53333,Diverse,,m
+Lezgian,Lezgic,Hlut,41.48,47.53333,Ira Alieva,,f
+Lezgian,Lezgic,Hlut,41.48,47.53333,Manda,,f
+Lezgian,Lezgic,Hlut,41.48,47.53333,Sanidin,,m
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Dzhamal,1937,m
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Aishe,1961,f
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Radzhab,1968,m
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Gulara,1969,f
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Faisal,1973,m
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Raila,1984,f
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Arsen,,m
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Sulejban,1950,m
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Ajshat,1953,m
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Rajab,1954,m
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Magomet,1955,m
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Zumrud,1974,f
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Gulejman,1983,f
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Hadizhat,,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Mefledin,1947,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Solmaz,1958,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Шакир,1960,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Магомет,1973,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Muzafer,1974,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Саид,1975,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Rahman,1975,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Ilvera,1977,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Vadim,1977,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Hadizhat,1978,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Sara,1979,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Ludmila,1982,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Faina,1984,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Давид,1992,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Эсмира,1992,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Джавид,1993,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Кафлан,1993,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Imara,1994,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Наргиз,1999,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Саади,1999,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Maria,2001,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Nurula,,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Айдимиз,,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Alier,,m
+Rutul,Lezgic,Kina,41.61667,47.26722,Lala,,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Ludmila,,f
+Rutul,Lezgic,Kina,41.61667,47.26722,Muzafer,,m
+Rutul,Lezgic,Kina,41.61667,47.26722,NN,,f
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Magomedgadzhi,1953,m
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Qasum,1980,m
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Shaxban,1984,m
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Usman,,m
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Pat1imat Tagirovna,1949,f
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Kazim,1955,m
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Damadanova B,1957,f
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Murtuz,1959,m
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Israpil,1979,m
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Abakalla Pat'imat,1994,f
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Xanchik,1994,m
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Damadanova A,1996,f
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Shamil Mazhirovich,1946,m
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zulumhan Esen ulatovich Saidov,1955,m
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Halilla Saipujev,1963,m
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Mirzahan,1965,m
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ozdenaj,1966,f
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zumrud,1971,f
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ubajdat,1985,f
+Rutul,Lezgic,Rutul,41.53333,47.41667,Vera,1949,f
+Rutul,Lezgic,Rutul,41.53333,47.41667,Davudu,1958,m
+Rutul,Lezgic,Rutul,41.53333,47.41667,Sveta,1960,f
+Tsez,Tsezic,Kidero,42.19306,45.95833,Omar,1937,m
+Tsez,Tsezic,Kidero,42.19306,45.95833,Ali,1952,m
+Tsez,Tsezic,Kidero,42.19306,45.95833,Aminat,1952,f
+Tsez,Tsezic,Kidero,42.19306,45.95833,IbragimKhalil,1968,m
+Tsez,Tsezic,Kidero,42.19306,45.95833,Magomed,1968,m
+Tsez,Tsezic,Kidero,42.19306,45.95833,Makhatch,1974,m
+Tsez,Tsezic,Kidero,42.19306,45.95833,Hadizhat,1991,f
+Tsez,Tsezic,Kidero,42.19306,45.95833,Aishat,1994,f
+Tsez,Tsezic,Kidero,42.19306,45.95833,Shaima,,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Муртузов Омар-Асхаб Магомедович,1959,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хасиева Айшат Камиловна,1961,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Сагитов Насиб Магомедович,1977,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Патимат Юсоповна,1978,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хизбулаева Аминат Хизриевна,1978,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хасулбеков Адильгерей Магомедович,1983,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Исрапилова Гулишат Магомедовна,1985,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Зелимов Али Магомедович,1986,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Заира Казбековна,1988,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Гереева Мадина Хабибовна,1993,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедов Хабиб Шахбанович,1993,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Патимат Алигаджиевна,1993,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Расулов Муса Сулейманович,1994,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Муртазалиев Артур Исрапилович,1996,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хизбулаева Аминат Магамед-Саидовна,1997,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Гасанова Задай Магомедовна,2000,f
+Andi,Avar-Andic,Zilo,42.72,46.31861,Исрапилов Рамазан Шахбанович,2000,m
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедов Курбан Алигаджиевич,2000,m
