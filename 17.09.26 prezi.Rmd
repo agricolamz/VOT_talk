@@ -1,0 +1,119 @@
+---
+title: "Daghestanian stops"
+subtitle: "VOT, CD and other stories"
+author: "M. Daniel, S. Gravunder, G. Moroz, V. Zhigulskaya"
+date: "2017/10/03"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, center, middle
+
+# Motivation
+
+---
+
+# Introduction
+
+<audio controls>
+  <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+</audio>
+
+---
+class: inverse, center, middle
+
+# Data
+
+---
+# Villages
+
+```{r, fig.width=10.4, fig.height=7, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(lingtypology)
+library(ggjoy)
+df <- read_csv("speakers.csv")
+df %>% 
+  distinct(Language, Location, lon, lat) -> 
+  df_u
+map.feature(df_u$Language,
+            features = df_u$Language,
+            tile = "Esri.OceanBasemap",
+            label = df_u$Location,
+            label.hide = FALSE,
+            label.fsize = 20,
+            longitude = df_u$lon,
+            latitude = df_u$lat,
+            minimap = TRUE,
+            minimap.position = "topleft")
+```
+---
+# Speakers
+```{r, fig.width=10.4, fig.height=7, echo = FALSE, message=FALSE}
+df %>% 
+  ggplot(aes(Language, fill = Gender))+
+  geom_bar(position = "dodge")+
+  theme_bw()+
+  coord_flip()+
+  theme(text = element_text(size=20))+
+  labs(y = "", x = "",
+       title = "Number of recorded speakeres",
+       caption = "on 03.10.2017")
+```
+---
+# Speakers
+```{r, fig.width=10.4, fig.height=7, echo = FALSE, message=FALSE}
+df %>% 
+  count(Location, Gender) %>% 
+  full_join(df) %>% 
+  filter(!is.na(Age)) %>%
+  ggplot(aes(x = Age, y = Location, fill = Gender)) +
+  geom_joy(alpha = 0.6) +
+  geom_text(aes(label = n, x = 2025), size = 8)+
+  theme_bw()+
+  facet_wrap(~Gender)+
+  theme(text = element_text(size=20))+
+  labs(y = "", x = "",
+       title = "Year of birth")+
+  scale_x_continuous(breaks = 1:4*25+1900)
+```
+
+---
+# Stops and affricates
+
+---
+# Lists of words
+
+---
+class: inverse, center, middle
+
+# Annotation
+
+---
+class: inverse, center, middle
+
+# Results
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created with the following R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)
+
+[**ggplot2**](http://ggplot2.org)
+
+[**lingtypology**](https://ropensci.github.io/lingtypology/)
+
+[**ggjoy**](https://CRAN.R-project.org/package=ggjoy)
