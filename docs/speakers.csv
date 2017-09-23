@@ -1,117 +1,117 @@
-Language,Branch,Location,lat,lon,Speaker,Age,Gender
-Archi,Lezgic,Archi,42.0647,46.868,JSP (Юсуп),1925,m
-Archi,Lezgic,Archi,42.0647,46.868,PSX (Пасихат),1945,f
-Archi,Lezgic,Archi,42.0647,46.868,BTA (Бутта),1965,m
-Archi,Lezgic,Archi,42.0647,46.868,HMR (Хаджимурат),1965,m
-Archi,Lezgic,Archi,42.0647,46.868,"HDK (= HDJ, Хадижат) из Кубатля",1970,f
-Archi,Lezgic,Archi,42.0647,46.868,KVS (Кавсарат),1970,f
-Lak,Lak,Balkhar,42.27750,47.23056,Xamis,1943,f
-Lak,Lak,Balkhar,42.27750,47.23056,Sulejman,1969,m
-Lak,Lak,Balkhar,42.27750,47.23056,Mahamad,,m
-Bezhta,Tsezic,Bezhta,42.13361,46.12194,Patimat,1958,f
-Bezhta,Tsezic,Bezhta,42.13361,46.12194,Marzijat,1965,f
-Bezhta,Tsezic,Bezhta,42.13361,46.12194,Batir,1981,m
-Bezhta,Tsezic,Bezhta,42.13361,46.12194,Zubair,,m
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Magomedov,1949,m
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Makhdiev,1963,m
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Bagandalieva,1967,f
-Dargwa,Dargwa,Cuxta,42.34333,47.32972,Murtuzalieva,1975,f
-Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Nurula,1957,m
-Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Tarlan,1989,m
-Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Murad,1996,m
-Tsakhur,Tsezic,Gelmets,41.61667,47.16667,Abduragim,,m
-Lezgian,Lezgic,Hlut,41.48,47.53333,Diverse,,m
-Lezgian,Lezgic,Hlut,41.48,47.53333,Ira Alieva,,f
-Lezgian,Lezgic,Hlut,41.48,47.53333,Manda,,f
-Lezgian,Lezgic,Hlut,41.48,47.53333,Sanidin,,m
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Dzhamal,1937,m
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Aishe,1961,f
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Radzhab,1968,m
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Gulara,1969,f
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Faisal,1973,m
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Raila,1984,f
-Rutul,Lezgic,Ikhrek,41.69611,47.21444,Arsen,,m
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Sulejban,1950,m
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Ajshat,1953,m
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Rajab,1954,m
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Magomet,1955,m
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Zumrud,1974,f
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Gulejman,1983,f
-Dargwa,Dargwa,Javgat,42.03333,47.91667,Hadizhat,,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Mefledin,1947,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Solmaz,1958,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Шакир,1960,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Магомет,1973,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Muzafer,1974,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Саид,1975,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Rahman,1975,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Ilvera,1977,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Vadim,1977,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Hadizhat,1978,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Sara,1979,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Ludmila,1982,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Faina,1984,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Давид,1992,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Эсмира,1992,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Джавид,1993,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Кафлан,1993,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Imara,1994,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Наргиз,1999,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Саади,1999,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Maria,2001,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Nurula,,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Айдимиз,,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Alier,,m
-Rutul,Lezgic,Kina,41.61667,47.26722,Lala,,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Ludmila,,f
-Rutul,Lezgic,Kina,41.61667,47.26722,Muzafer,,m
-Rutul,Lezgic,Kina,41.61667,47.26722,NN,,f
-Avar,Avar-Andic,Kusur,41.78278,46.944750,Magomedgadzhi,1953,m
-Avar,Avar-Andic,Kusur,41.78278,46.944750,Qasum,1980,m
-Avar,Avar-Andic,Kusur,41.78278,46.944750,Shaxban,1984,m
-Avar,Avar-Andic,Kusur,41.78278,46.944750,Usman,,m
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Pat1imat Tagirovna,1949,f
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Kazim,1955,m
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Damadanova B,1957,f
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Murtuz,1959,m
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Israpil,1979,m
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Abakalla Pat'imat,1994,f
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Xanchik,1994,m
-Dargwa,Dargwa,Mehweb,42.23,47.04833,Damadanova A,1996,f
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Shamil Mazhirovich,1946,m
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zulumhan Esen ulatovich Saidov,1955,m
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Halilla Saipujev,1963,m
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Mirzahan,1965,m
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ozdenaj,1966,f
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zumrud,1971,f
-Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ubajdat,1985,f
-Rutul,Lezgic,Rutul,41.53333,47.41667,Vera,1949,f
-Rutul,Lezgic,Rutul,41.53333,47.41667,Davudu,1958,m
-Rutul,Lezgic,Rutul,41.53333,47.41667,Sveta,1960,f
-Tsez,Tsezic,Kidero,42.19306,45.95833,Omar,1937,m
-Tsez,Tsezic,Kidero,42.19306,45.95833,Ali,1952,m
-Tsez,Tsezic,Kidero,42.19306,45.95833,Aminat,1952,f
-Tsez,Tsezic,Kidero,42.19306,45.95833,IbragimKhalil,1968,m
-Tsez,Tsezic,Kidero,42.19306,45.95833,Magomed,1968,m
-Tsez,Tsezic,Kidero,42.19306,45.95833,Makhatch,1974,m
-Tsez,Tsezic,Kidero,42.19306,45.95833,Hadizhat,1991,f
-Tsez,Tsezic,Kidero,42.19306,45.95833,Aishat,1994,f
-Tsez,Tsezic,Kidero,42.19306,45.95833,Shaima,,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Муртузов Омар-Асхаб Магомедович,1959,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Хасиева Айшат Камиловна,1961,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Сагитов Насиб Магомедович,1977,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Патимат Юсоповна,1978,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Хизбулаева Аминат Хизриевна,1978,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Хасулбеков Адильгерей Магомедович,1983,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Исрапилова Гулишат Магомедовна,1985,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Зелимов Али Магомедович,1986,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Заира Казбековна,1988,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Гереева Мадина Хабибовна,1993,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедов Хабиб Шахбанович,1993,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Патимат Алигаджиевна,1993,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Расулов Муса Сулейманович,1994,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Муртазалиев Артур Исрапилович,1996,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Хизбулаева Аминат Магамед-Саидовна,1997,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Гасанова Задай Магомедовна,2000,f
-Andi,Avar-Andic,Zilo,42.72,46.31861,Исрапилов Рамазан Шахбанович,2000,m
-Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедов Курбан Алигаджиевич,2000,m
+Language,Branch,Location,lat,lon,Speaker,Age,Gender,color
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Magomedgadzhi,1953,m,yellow
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Qasum,1980,m,yellow
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Shaxban,1984,m,yellow
+Avar,Avar-Andic,Kusur,41.78278,46.944750,Usman,,m,yellow
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Shamil Mazhirovich,1946,m,orange3
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zulumhan Esen ulatovich Saidov,1955,m,orange3
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Halilla Saipujev,1963,m,orange3
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Mirzahan,1965,m,orange3
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ozdenaj,1966,f,orange3
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Zumrud,1971,f,orange3
+Andi,Avar-Andic,Rikvani,42.78139,46.31528,Ubajdat,1985,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Муртузов Омар-Асхаб Магомедович,1959,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хасиева Айшат Камиловна,1961,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Сагитов Насиб Магомедович,1977,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Патимат Юсоповна,1978,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хизбулаева Аминат Хизриевна,1978,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хасулбеков Адильгерей Магомедович,1983,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Исрапилова Гулишат Магомедовна,1985,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Зелимов Али Магомедович,1986,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Заира Казбековна,1988,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Гереева Мадина Хабибовна,1993,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедов Хабиб Шахбанович,1993,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедова Патимат Алигаджиевна,1993,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Расулов Муса Сулейманович,1994,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Муртазалиев Артур Исрапилович,1996,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Хизбулаева Аминат Магамед-Саидовна,1997,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Гасанова Задай Магомедовна,2000,f,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Исрапилов Рамазан Шахбанович,2000,m,orange3
+Andi,Avar-Andic,Zilo,42.72,46.31861,Магомедов Курбан Алигаджиевич,2000,m,orange3
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Magomedov,1949,m,blue
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Makhdiev,1963,m,blue
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Bagandalieva,1967,f,blue
+Dargwa,Dargwa,Cuxta,42.34333,47.32972,Murtuzalieva,1975,f,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Sulejban,1950,m,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Ajshat,1953,m,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Rajab,1954,m,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Magomet,1955,m,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Zumrud,1974,f,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Gulejman,1983,f,blue
+Dargwa,Dargwa,Javgat,42.03333,47.91667,Hadizhat,,f,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Pat1imat Tagirovna,1949,f,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Kazim,1955,m,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Damadanova B,1957,f,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Murtuz,1959,m,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Israpil,1979,m,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Abakalla Pat'imat,1994,f,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Xanchik,1994,m,blue
+Dargwa,Dargwa,Mehweb,42.23,47.04833,Damadanova A,1996,f,blue
+Lak,Lak,Balkhar,42.27750,47.23056,Xamis,1943,f,violetred
+Lak,Lak,Balkhar,42.27750,47.23056,Sulejman,1969,m,violetred
+Lak,Lak,Balkhar,42.27750,47.23056,Mahamad,,m,violetred
+Archi,Lezgic,Archi,42.0647,46.868,JSP (Юсуп),1925,m,limegreen
+Archi,Lezgic,Archi,42.0647,46.868,PSX (Пасихат),1945,f,limegreen
+Archi,Lezgic,Archi,42.0647,46.868,BTA (Бутта),1965,m,limegreen
+Archi,Lezgic,Archi,42.0647,46.868,HMR (Хаджимурат),1965,m,limegreen
+Archi,Lezgic,Archi,42.0647,46.868,"HDK (= HDJ, Хадижат) из Кубатля",1970,f,limegreen
+Archi,Lezgic,Archi,42.0647,46.868,KVS (Кавсарат),1970,f,limegreen
+Lezgian,Lezgic,Hlut,41.477,47.53333,Diverse,,m,#74C476
+Lezgian,Lezgic,Hlut,41.477,47.53333,Ira Alieva,,f,#74C476
+Lezgian,Lezgic,Hlut,41.477,47.53333,Manda,,f,#74C476
+Lezgian,Lezgic,Hlut,41.477,47.53333,Sanidin,,m,#74C476
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Dzhamal,1937,m,greenyellow
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Aishe,1961,f,greenyellow
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Radzhab,1968,m,greenyellow
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Gulara,1969,f,greenyellow
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Faisal,1973,m,greenyellow
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Raila,1984,f,greenyellow
+Rutul,Lezgic,Ikhrek,41.69611,47.21444,Arsen,,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Mefledin,1947,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Solmaz,1958,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Шакир,1960,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Магомет,1973,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Muzafer,1974,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Саид,1975,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Rahman,1975,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Ilvera,1977,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Vadim,1977,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Hadizhat,1978,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Sara,1979,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Ludmila,1982,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Faina,1984,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Давид,1992,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Эсмира,1992,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Джавид,1993,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Кафлан,1993,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Imara,1994,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Наргиз,1999,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Саади,1999,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Maria,2001,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Nurula,,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Айдимиз,,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Alier,,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Lala,,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Ludmila,,f,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,Muzafer,,m,greenyellow
+Rutul,Lezgic,Kina,41.58,47.25,NN,,f,greenyellow
+Rutul,Lezgic,Rutul,41.53,47.41667,Vera,1949,f,greenyellow
+Rutul,Lezgic,Rutul,41.53,47.41667,Davudu,1958,m,greenyellow
+Rutul,Lezgic,Rutul,41.53,47.41667,Sveta,1960,f,greenyellow
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Patimat,1958,f,palevioletred
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Marzijat,1965,f,palevioletred
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Batir,1981,m,palevioletred
+Bezhta,Tsezic,Bezhta,42.13361,46.12194,Zubair,,m,palevioletred
+Tsakhur,Tsezic,Gelmets,41.635,47.16667,Nurula,1957,m,seagreen
+Tsakhur,Tsezic,Gelmets,41.635,47.16667,Tarlan,1989,m,seagreen
+Tsakhur,Tsezic,Gelmets,41.635,47.16667,Murad,1996,m,seagreen
+Tsakhur,Tsezic,Gelmets,41.635,47.16667,Abduragim,,m,seagreen
+Tsez,Tsezic,Kidero,42.19306,45.95833,Omar,1937,m,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Ali,1952,m,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Aminat,1952,f,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,IbragimKhalil,1968,m,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Magomed,1968,m,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Makhatch,1974,m,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Hadizhat,1991,f,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Aishat,1994,f,brown1
+Tsez,Tsezic,Kidero,42.19306,45.95833,Shaima,,f,brown1

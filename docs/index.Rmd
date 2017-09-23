@@ -47,18 +47,19 @@ library(lingtypology)
 library(ggjoy)
 df <- read_csv("speakers.csv")
 df %>% 
-  distinct(Language, Location, lon, lat) -> 
+  distinct(Language, Location, lon, lat, color) -> 
   df_u
 map.feature(df_u$Language,
             features = df_u$Language,
             tile = "Esri.OceanBasemap",
             label = df_u$Location,
             label.hide = FALSE,
-            label.fsize = 20,
+            label.fsize = 19,
             longitude = df_u$lon,
             latitude = df_u$lat,
             minimap = TRUE,
-            minimap.position = "topleft")
+            minimap.position = "topleft",
+            color = df_u$color)
 ```
 ---
 # Speakers by village
