@@ -61,7 +61,7 @@ map.feature(df_u$Language,
             minimap.position = "topleft")
 ```
 ---
-# Speakers
+# Speakers by village
 ```{r}
 df %>% 
   count(Location) %>% 
@@ -85,6 +85,41 @@ df_plot[,-2] %>%
 
 df_plot %>% 
   ggplot(aes(x = Age, y = Location)) +
+  geom_joy(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_joy(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_text(data = annotation, aes(label = n, x = 2030), size = 8)+
+  theme_bw()+
+  facet_grid(~Gender)+
+  theme(text = element_text(size=20))+
+  labs(y = "", x = "",
+       title = "Year of birth")+
+  scale_x_continuous(breaks = 1:4*30+1890)
+```
+---
+# Speakers by language
+```{r}
+df %>% 
+  count(Language) %>% 
+  full_join(df) %>% 
+  mutate(`(all)` = n) %>% 
+  count(Language, `(all)`, Gender) %>% 
+  spread(Gender, nn) %>% 
+  mutate(f = ifelse(is.na(f), 0, f)) %>% 
+  gather(Gender, n, `(all)`:m) ->
+  annotation
+
+df %>% 
+  count(Language, Gender) %>% 
+  full_join(df) %>% 
+  filter(!is.na(Age)) ->
+  df_plot
+
+df_plot[,-2] %>% 
+  mutate(Gender = "(all)") ->
+  df_plot2
+
+df_plot %>% 
+  ggplot(aes(x = Age, y = Language)) +
   geom_joy(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
   geom_joy(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
   geom_text(data = annotation, aes(label = n, x = 2030), size = 8)+
