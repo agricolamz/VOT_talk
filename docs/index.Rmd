@@ -14,6 +14,11 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE,
+                      message=FALSE,
+                      warning= FALSE,
+                      fig.width=10.4,
+                      fig.height=7)
 ```
 
 class: inverse, center, middle
@@ -36,7 +41,7 @@ class: inverse, center, middle
 ---
 # Villages
 
-```{r, fig.width=10.4, fig.height=7, echo = FALSE, message=FALSE}
+```{r}
 library(tidyverse)
 library(lingtypology)
 library(ggjoy)
@@ -57,33 +62,38 @@ map.feature(df_u$Language,
 ```
 ---
 # Speakers
-```{r, fig.width=10.4, fig.height=7, echo = FALSE, message=FALSE}
+```{r}
 df %>% 
-  ggplot(aes(Language, fill = Gender))+
-  geom_bar(position = "dodge")+
-  theme_bw()+
-  coord_flip()+
-  theme(text = element_text(size=20))+
-  labs(y = "", x = "",
-       title = "Number of recorded speakeres",
-       caption = "on 03.10.2017")
-```
----
-# Speakers
-```{r, fig.width=10.4, fig.height=7, echo = FALSE, message=FALSE}
+  count(Location) %>% 
+  full_join(df) %>% 
+  mutate(`(all)` = n) %>% 
+  count(Location, `(all)`, Gender) %>% 
+  spread(Gender, nn) %>% 
+  mutate(f = ifelse(is.na(f), 0, f)) %>% 
+  gather(Gender, n, `(all)`:m) ->
+  annotation
+
 df %>% 
   count(Location, Gender) %>% 
   full_join(df) %>% 
-  filter(!is.na(Age)) %>%
-  ggplot(aes(x = Age, y = Location, fill = Gender)) +
-  geom_joy(alpha = 0.6) +
-  geom_text(aes(label = n, x = 2025), size = 8)+
+  filter(!is.na(Age)) ->
+  df_plot
+
+df_plot[,-2] %>% 
+  mutate(Gender = "(all)") ->
+  df_plot2
+
+df_plot %>% 
+  ggplot(aes(x = Age, y = Location)) +
+  geom_joy(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_joy(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_text(data = annotation, aes(label = n, x = 2030), size = 8)+
   theme_bw()+
-  facet_wrap(~Gender)+
+  facet_grid(~Gender)+
   theme(text = element_text(size=20))+
   labs(y = "", x = "",
        title = "Year of birth")+
-  scale_x_continuous(breaks = 1:4*25+1900)
+  scale_x_continuous(breaks = 1:4*30+1890)
 ```
 
 ---
