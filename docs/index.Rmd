@@ -19,6 +19,9 @@ knitr::opts_chunk$set(echo = FALSE,
                       warning= FALSE,
                       fig.width=10.4,
                       fig.height=7)
+library(tidyverse)
+library(lingtypology)
+library(ggjoy)
 ```
 
 class: inverse, center, middle
@@ -42,9 +45,6 @@ class: inverse, center, middle
 # Villages
 
 ```{r}
-library(tidyverse)
-library(lingtypology)
-library(ggjoy)
 df <- read_csv("speakers.csv")
 df %>% 
   distinct(Language, Location, lon, lat, color) -> 
@@ -133,10 +133,30 @@ df_plot %>%
 ```
 
 ---
-# Stops and affricates
+# Features of stops and affricates
+
+- **POA**: labial; dental; lateral; postalveolar; velar; uvular
+- **manner**: stops; affricates
+- **phonation type**: voiced; voiceless; ejective
+- **gemination**
+- **labialization**
+- **pharyngealization**
+- **phonological context**: initial; medial
+- **type of utterance**: first; second; third; carrier phrases
+
+---
+# Measurments
+
+- **Closure Duration**
+- **Voice Oncet Time**
+- **Fricative part**
+  - **Postfricative part**
+  - **Creacky voice part of the vowel**
+- **Intencity contour**
 
 ---
 # Lists of words
+
 
 ---
 class: inverse, center, middle
@@ -147,6 +167,82 @@ class: inverse, center, middle
 class: inverse, center, middle
 
 # Results
+
+---
+# Absolute values of VOT and CD
+```{r}
+results <- read_tsv("result.tsv", col_names = FALSE)
+colnames(results) <- c("speaker", "stimulus", "sound", "utterance", "s_parts", "duration", "start", "end")
+
+results %>% 
+  mutate(POA = ifelse(grepl("[bp]", sound), "labial", "")) %>% 
+  mutate(POA = ifelse(grepl("[dts]", sound), "dental", POA)) %>%
+  mutate(POA = ifelse(grepl("ɬ", sound), "lateral", POA)) %>%
+  mutate(POA = ifelse(grepl("tʃ|dʒ", sound), "postalveolar", POA)) %>%
+  mutate(POA = ifelse(grepl("[kgɡ]", sound), "velar", POA)) %>%
+  mutate(POA = ifelse(grepl("[qɢ]", sound), "uvular", POA)) %>%
+  mutate(POA = factor(POA, levels = c("labial", "dental", "lateral", "postalveolar", "velar", "uvular"))) %>% 
+  mutate(manner = ifelse(grepl("ts|tʃ|tɬ|dʒ|qχ", sound), "affricate", "plosive")) %>% 
+  mutate(manner = ifelse(grepl("[aiuoeɨ]", sound), "vowel", manner)) %>% 
+  mutate(type = ifelse(grepl("[bdgɡɢ]", sound), "voiced", "voiceless")) %>% 
+  mutate(type = ifelse(manner == "vowel", "vowel", type)) %>% 
+  mutate(type = ifelse(grepl("'", sound), "ejective", type)) %>% 
+  mutate(geminate = ifelse(grepl("[:ː]", sound), "geminate", "")) %>% 
+  mutate(labialization = ifelse(grepl("ʷ", sound), "labialized", "")) %>% 
+  mutate(pharyngealization = ifelse(grepl("ˤ", sound), "pharyngealized", "")) ->
+  results
+
+results %>% 
+  select(sound) %>% 
+  slice(-1) %>% 
+  mutate(s_identical = . == results[-nrow(results),"sound"]) %>% 
+  select(s_identical) %>% 
+  add_row(s_identical = FALSE, .before = 1) %>% 
+  unlist() ->
+  results$same_sound
+
+results %>% 
+  select(utterance) %>% 
+  slice(-1) %>% 
+  mutate(ut_identical = . == results[-nrow(results),"utterance"]) %>% 
+  select(ut_identical) %>% 
+  add_row(ut_identical = FALSE, .before = 1) %>% 
+  unlist() ->
+  results$same_utterance
+
+results %>% 
+  mutate(ut_type = ifelse(same_utterance, "medial", "initial")) %>% 
+  mutate(ut_type = ifelse(same_sound, c("NA", ut_type), ut_type)) %>%
+  mutate(ut_type = ifelse(manner == "vowel", c("", ut_type), ut_type)) %>% 
+  select(-same_sound, -same_utterance) %>% 
+  mutate(sound_m = ifelse(manner == "vowel", sound[-1], sound))->
+  results
+
+results %>% 
+  spread(s_parts, duration) %>% 
+  select(-start, -end) %>%
+  mutate_all(funs(replace(., is.na(.), 0))) %>% 
+  group_by(speaker, stimulus, utterance, sound_m, POA, manner, type, geminate, labialization, pharyngealization, ut_type) %>% 
+  summarise(cd = sum(cd),
+            cv = sum(cv),
+            f = sum(f),
+            m = sum(m),
+            pf = sum(pf)) %>% 
+  mutate(vot = f + pf,
+         whole_vowel = cv + m) %>% 
+  filter(manner != "vowel",
+         ut_type != "initial") %>% 
+ggplot(aes(cd, vot, color = type))+
+  geom_point(size = 3)+
+  theme_bw()+
+  facet_wrap(~POA)+
+  theme(text = element_text(size=20))+
+  labs(y = "VOT",
+       x = "CD",
+       caption = paste("Based on",
+                       length(unique(results$speaker)),
+                       "speaker"))
+```
 
 ---
 
