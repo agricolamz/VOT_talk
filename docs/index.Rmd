@@ -5,6 +5,7 @@ author: "M. Daniel, S. Grawunder, G. Moroz, V. Zhigulskaya"
 date: "2017/10/03"
 output:
   xaringan::moon_reader:
+    css: ["default", "my_theme.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -171,8 +172,8 @@ class: inverse, center, middle
 # Analysis
 
 - Annotation in Praat
-- Data extraction with [Praat Script](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/Lennes%2C%20Moroz%20duration%2C%20info%20from%20other%20tier%20and%20some%20prefix%202%20tsv.praat)
-- Data analysis and visulization [with R](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/index.Rmd)
+- Data extraction with [**Praat Script**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/Lennes%2C%20Moroz%20duration%2C%20info%20from%20other%20tier%20and%20some%20prefix%202%20tsv.praat)
+- Data analysis and visulization [**with R**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/index.Rmd)
 
 ---
 # Absolute values of VOT and CD
