@@ -148,12 +148,21 @@ df_plot %>%
 ---
 # Measurments
 
-- Closure Duration
-- Voice Oncet Time
-- Fricative part
-  - Postfricative part
-  - Creacky voice part of the vowel
+- Closure Duration (CD)
+- Voice Oncet Time (VOT)
+  - Fricative part (FP)
+  - Postfricative part (PF)
+- Folowing vowel duration
+  - Creacky voice part of the vowel (CV)
+  - Modal Voice part (M)
 - Intencity contour
+
+---
+# Measurments
+
+The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_12:
+
+![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/annotation_example.png)
 
 ---
 # Lists of words
@@ -259,10 +268,10 @@ class: center, middle
 
 Slides created with the following R packages:
 
-[**xaringan**](https://github.com/yihui/xaringan)
+[**ggjoy**](https://CRAN.R-project.org/package=ggjoy)
 
 [**ggplot2**](http://ggplot2.org)
 
 [**lingtypology**](https://ropensci.github.io/lingtypology/)
 
-[**ggjoy**](https://CRAN.R-project.org/package=ggjoy)
+[**xaringan**](https://github.com/yihui/xaringan)
