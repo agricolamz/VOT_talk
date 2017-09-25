@@ -148,12 +148,12 @@ df_plot %>%
 ---
 # Measurments
 
-- **Closure Duration**
-- **Voice Oncet Time**
-- **Fricative part**
-  - **Postfricative part**
-  - **Creacky voice part of the vowel**
-- **Intencity contour**
+- Closure Duration
+- Voice Oncet Time
+- Fricative part
+  - Postfricative part
+  - Creacky voice part of the vowel
+- Intencity contour
 
 ---
 # Lists of words
