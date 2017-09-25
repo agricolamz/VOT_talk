@@ -11,7 +11,7 @@ form Calculate durations of labeled segments
 	comment Which tier of the TextGrid object would you like to calculate the duration for?
 	integer tier_Duration 1
 	comment Which tier of the TextGrid object would you like to take the information from?
-	integer tier_Label_1 2
+	integer tier_Label_1 6
 	comment Which tier of the TextGrid object would you like to take the information from?
 	integer tier_Label_2 3
 	comment Which tier of the TextGrid object would you like to take the information from?
@@ -19,7 +19,7 @@ form Calculate durations of labeled segments
 	comment Which prefix do you want to use for the results from this TextGrid?
 	text informant D3
 	comment Where do you want to save the results?
-	text textfile /home/.../result.txt
+	text textfile /home/agricolamz/_DATA/OneDrive1/_Work/Articles/2017 II VOT article/prezi for LAB/docs/result.tsv
 endform
 
 # check how many intervals there are in the selected tier:

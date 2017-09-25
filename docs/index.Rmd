@@ -32,9 +32,14 @@ class: inverse, center, middle
 ---
 
 # Introduction
-
+Mehweb speaker: **q'ap'a** ‘lid’ 
 <audio controls>
-  <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_mehweb_q'ap'a.WAV" type="audio/wav">
+</audio>
+
+Zilo speaker: **bot'i** ‘blind’ 
+<audio controls>
+  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_bot'i.WAV" type="audio/wav">
 </audio>
 
 ---
