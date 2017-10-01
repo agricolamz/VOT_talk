@@ -22,7 +22,8 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.height=7)
 library(tidyverse)
 library(lingtypology)
-library(ggjoy)
+library(ggridges)
+library(stringr)
 ```
 
 class: inverse, center, middle
@@ -92,8 +93,8 @@ df_plot[,-2] %>%
 
 df_plot %>% 
   ggplot(aes(x = Age, y = Location)) +
-  geom_joy(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
-  geom_joy(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_density_ridges(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_density_ridges(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
   geom_text(data = annotation, aes(label = n, x = 2030), size = 8)+
   theme_bw()+
   facet_grid(~Gender)+
@@ -127,8 +128,8 @@ df_plot[,-2] %>%
 
 df_plot %>% 
   ggplot(aes(x = Age, y = Language)) +
-  geom_joy(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
-  geom_joy(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_density_ridges(aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
+  geom_density_ridges(data = df_plot2, aes(fill = Gender), alpha = 0.6, show.legend = FALSE) +
   geom_text(data = annotation, aes(label = n, x = 2030), size = 8)+
   theme_bw()+
   facet_grid(~Gender)+
@@ -183,7 +184,7 @@ The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_11:
 
 --
 
-But Vasilisa checks and corrects other annotaters work…
+But Vasilisa checks and corrects other annotators work…
 
 --
 
@@ -224,80 +225,122 @@ class: inverse, center, middle
 - Data analysis and visulization [**with R**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/index.Rmd)
 
 ---
-# Absolute values of VOT and CD
+# Absolute values of CD (medial)
 ```{r}
-results <- read_tsv("result.tsv", col_names = FALSE)
-colnames(results) <- c("speaker", "stimulus", "sound", "utterance", "s_parts", "duration", "start", "end")
+results <- read_tsv("results.tsv")
+correspondence <- read_tsv("correspondence.tsv")
 
 results %>% 
-  mutate(POA = ifelse(grepl("[bp]", sound), "labial", "")) %>% 
-  mutate(POA = ifelse(grepl("[dts]", sound), "dental", POA)) %>%
-  mutate(POA = ifelse(grepl("ɬ", sound), "lateral", POA)) %>%
-  mutate(POA = ifelse(grepl("tʃ|dʒ", sound), "postalveolar", POA)) %>%
-  mutate(POA = ifelse(grepl("[kgɡ]", sound), "velar", POA)) %>%
-  mutate(POA = ifelse(grepl("[qɢ]", sound), "uvular", POA)) %>%
-  mutate(POA = factor(POA, levels = c("labial", "dental", "lateral", "postalveolar", "velar", "uvular"))) %>% 
-  mutate(manner = ifelse(grepl("ts|tʃ|tɬ|dʒ|qχ", sound), "affricate", "plosive")) %>% 
-  mutate(manner = ifelse(grepl("[aiuoeɨ]", sound), "vowel", manner)) %>% 
-  mutate(type = ifelse(grepl("[bdgɡɢ]", sound), "voiced", "voiceless")) %>% 
-  mutate(type = ifelse(manner == "vowel", "vowel", type)) %>% 
-  mutate(type = ifelse(grepl("'", sound), "ejective", type)) %>% 
-  mutate(geminate = ifelse(grepl("[:ː]", sound), "geminate", "")) %>% 
-  mutate(labialization = ifelse(grepl("ʷ", sound), "labialized", "")) %>% 
-  mutate(pharyngealization = ifelse(grepl("ˤ", sound), "pharyngealized", "")) ->
-  results
+  left_join(correspondence) %>% 
+  left_join(df) %>% 
+  mutate(repetition = ifelse(repetition == "--undefined--", "", repetition),
+         poa = ifelse(poa == "dentalv","dental", poa),
+         folVowDur = as.double(ifelse(folVowDur == "--undefined--",NA, folVowDur)),
+         geminate = ifelse(grepl("[ː:]", stop),"+g", "-g"),
+         voice = ifelse(voice == "voiced", "+v", "-v")) %>% 
+  mutate(VOT = fric + postfric,
+         cd_n = closdur/folVowDur,
+         vot_n = VOT/folVowDur,
+         utterance = paste0(context, "_", repetition),
+         poa = factor(poa, levels = c("bilabial", "dental",  "velar", "uvular")),
+         c_type = ifelse(glott == "glottalic", "ej", voice),
+         c_type = factor(c_type, levels = c("+v", "-v", "ej"))) ->
+  final_df
 
-results %>% 
-  select(sound) %>% 
-  slice(-1) %>% 
-  mutate(s_identical = . == results[-nrow(results),"sound"]) %>% 
-  select(s_identical) %>% 
-  add_row(s_identical = FALSE, .before = 1) %>% 
-  unlist() ->
-  results$same_sound
-
-results %>% 
-  select(utterance) %>% 
-  slice(-1) %>% 
-  mutate(ut_identical = . == results[-nrow(results),"utterance"]) %>% 
-  select(ut_identical) %>% 
-  add_row(ut_identical = FALSE, .before = 1) %>% 
-  unlist() ->
-  results$same_utterance
-
-results %>% 
-  mutate(ut_type = ifelse(same_utterance, "medial", "initial")) %>% 
-  mutate(ut_type = ifelse(same_sound, c("NA", ut_type), ut_type)) %>%
-  mutate(ut_type = ifelse(manner == "vowel", c("", ut_type), ut_type)) %>% 
-  select(-same_sound, -same_utterance) %>% 
-  mutate(sound_m = ifelse(manner == "vowel", sound[-1], sound))->
-  results
-
-results %>% 
-  spread(s_parts, duration) %>% 
-  select(-start, -end) %>%
-  mutate_all(funs(replace(., is.na(.), 0))) %>% 
-  group_by(speaker, stimulus, utterance, sound_m, POA, manner, type, geminate, labialization, pharyngealization, ut_type) %>% 
-  summarise(cd = sum(cd),
-            cv = sum(cv),
-            f = sum(f),
-            m = sum(m),
-            pf = sum(pf)) %>% 
-  mutate(vot = f + pf,
-         whole_vowel = cv + m) %>% 
-  filter(manner != "vowel",
-         ut_type != "initial") %>% 
-ggplot(aes(cd, vot, color = type))+
-  geom_point(size = 3)+
+final_df %>% 
+  filter(closdur > 0, position == "medial") %>% 
+  ggplot(aes(c_type, closdur, fill = Language))+
+  geom_violin()+
   theme_bw()+
-  facet_wrap(~POA)+
-  theme(text = element_text(size=20))+
-  labs(y = "VOT",
-       x = "CD",
-       caption = paste("Based on",
-                       length(unique(results$speaker)),
-                       "speakers"))
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(y = "CD", x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~poa, margins = TRUE)
 ```
+
+---
+# Absolute values of VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial") %>% 
+  ggplot(aes(c_type, VOT, fill = Language))+
+  geom_violin()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~poa, margins = TRUE)
+```
+
+---
+# Relative values of CD (medial)
+
+```{r}
+final_df %>% 
+  filter(closdur > 0, folVowDur> 0, position == "medial") %>% 
+  ggplot(aes(c_type, cd_n, fill = Language))+
+  geom_violin()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(y = "CD (normolised)", x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~poa, margins = TRUE)
+```
+
+---
+# Relative values of VOT (medial)
+
+```{r}
+final_df %>%
+  filter(VOT > 0, folVowDur > 0, position == "medial") %>%
+  ggplot(aes(c_type, vot_n, fill = Language)) +
+  geom_violin() +
+  theme_bw() +
+  theme(text = element_text(size = 20), legend.position = "bottom") +
+  labs(
+  x = "",
+  y = "VOT (normolised)",
+  caption = paste("Based on",
+  length(unique(results$filename)),
+  "speakers")
+  ) +
+  facet_grid(Gender ~ poa, margins = TRUE)
+```
+
+---
+# Absolute values of CD ~ VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial") %>% 
+  ggplot(aes(closdur, VOT, color = c_type))+
+  geom_point()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE)
+```
+
+---
+# Relative values of CD ~ VOT (medial) 
+
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial") %>% 
+  ggplot(aes(cd_n, vot_n, color = c_type))+
+  geom_point()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE)
+```
+
 
 ---
 

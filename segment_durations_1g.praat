@@ -33,6 +33,10 @@
 # - script cosmetics
 #### 2017-09-29 20:30 >>> 1f
 # - added /ɨ/, /aʔ/ and /h/ to the non-stops list
+#### 2017-10-01 19:30
+# - added substituion of white space and not white space for labels in sound tier and CD/VOT tier
+# - added substituion of white space and not white space for labels in CD/VOT tier
+
 
 form start
 	comment Where is the folder with the textgrids?
@@ -91,6 +95,7 @@ for i to nrst
 	for iii to nri
 		select tg
 		li$=Get label of interval: soundtier, iii
+		li$=replace_regex$(li$,"\s|\S","",0)
 		if (li$!="a" and li$!="i" and li$!="ai" and li$!="o" and li$!="u" and li$!="x" and li$!="i" and li$!="e" and li$!="r" and li$!="ɨ" and li$!="ʃ" and li$!="z" 
 			...and li$!="n" and li$!="m" and li$!="h" and li$!="l" and li$!="s" and li$!="χ" and li$!="w" and li$!="j" and li$!="ʁ" and li$!="ʔ" and li$!="aʔ" and li$!="")
 			index+=1
@@ -98,7 +103,7 @@ for i to nrst
 			et=Get end point: soundtier, iii
 			totdur=et-st
 			pli$=Get label of interval: soundtier, iii-1
-			
+			pli$=replace_regex$(pli$,"\s|\S","",0)
 			wi=Get interval at time: ipatier, st
 			word$=Get label of interval: ipatier, wi
 			ti=Get interval at time: transtier, st
@@ -117,6 +122,7 @@ for i to nrst
 			pvdur=0
 			
 			fli$=Get label of interval: soundtier, iii+1
+			fli$=replace_regex$(fli$,"\s|\S","",0)
 			flist=Get start point: soundtier, iii+1
 			fliet=Get end point: soundtier, iii+1
 			fvdur=fliet-flist
@@ -158,6 +164,7 @@ for i to nrst
 			nri_st=Get number of intervals: cdtier
 			for iv to nri_st
 				stli$=Get label of interval: cdtier, iv
+				stli$=replace_regex$(stli$,"\s|\S","",0)
 				stlist=Get start point: cdtier, iv
 				stliet=Get end point: cdtier, iv
 				dur=stliet-stlist
@@ -269,7 +276,7 @@ for i to nrst
 			elsif (index(li$,"b") > 0 or index(li$,"p")> 0)
 				poa$="bilabial"
 			elsif (index(li$,"d") > 0 or index(li$,"t")> 0)
-				poa$="dental"
+				poa$="dentalv"
 			endif
 			
 			# affricate
