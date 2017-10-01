@@ -173,11 +173,11 @@ The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_11:
 # Lists of words
 
 ---
-# Problemes
+# Problems
 
-- reliability of annotations made by different annotaters: 
+- reliability of annotations made by different annotaters
 --
-we need whole (partial?) reannatation and then we need to compare the annotations to calculate
+: we need whole (partial?) reannatation and then we need to compare the annotations to calculate
   - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
   - agreement for time segmentation that we annotated (e. g. **??**).
 
@@ -187,23 +187,27 @@ But Vasilisa checks and corrects other annotaters work…
 
 --
 
-- phonological disagreement: 
+- phonological disagreement
 --
-_q_ or _q͡χ_?
-
---
-
-- different contexts: lists of words are made using different principals.
+: _q_ or _q͡χ_?
 
 --
 
-- coding inconsistency: 
+- different contexts
 --
-we code with **f** label burst of the stops and fricative part of the affricats?
+: lists of words are made using different principals.
 
 --
 
-- different sound recordings conditions: headset microphone vs. pure recorder' microphones; different recorders;
+- coding inconsistency
+--
+: we code with **f** label burst of the stops and fricative part of the affricats?
+
+--
+
+- different sound recordings conditions
+--
+: headset microphone vs. pure recorder' microphones; different recorders;
 
 ---
 class: inverse, center, middle
