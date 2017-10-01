@@ -51,13 +51,13 @@ class: inverse, center, middle
 # Villages
 
 ```{r}
-df <- read_csv("speakers.csv")
+df <- read_tsv("speakers.csv")
 df %>% 
   distinct(Language, Location, lon, lat, color) -> 
   df_u
 map.feature(df_u$Language,
             features = df_u$Language,
-            tile = "Esri.OceanBasemap",
+            tile = "Stamen.TerrainBackground",
             label = df_u$Location,
             label.hide = FALSE,
             label.fsize = 19,
@@ -151,42 +151,72 @@ df_plot %>%
 - **type of utterance**: first; second; third; carrier phrases
 
 ---
-# Measurments
+# Measurements
 
 - Closure Duration (CD)
-- Voice Oncet Time (VOT)
+- Voice Onset Time (VOT)
   - Fricative part (FP)
-  - Postfricative part (PF)
-- Folowing vowel duration
-  - Creacky voice part of the vowel (CV)
+  - Post-fricative part (PF)
+- Following vowel duration
+  - Creaky voice part of the vowel (CV)
   - Modal Voice part (M)
-- Intencity contour
+- Intensity contour
 
 ---
-# Measurments
+# Measurements
 
-The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_12:
+The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_11:
 
-![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/annotation_example.png)
+![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_annotation_example.png)
 
 ---
 # Lists of words
 
-
 ---
-class: inverse, center, middle
+# Problemes
 
-# Annotation
+- reliability of annotations made by different annotaters: 
+--
+we need whole (partial?) reannatation and then we need to compare the annotations to calculate
+  - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
+  - agreement for time segmentation that we annotated (e. g. **??**).
+
+--
+
+But Vasilisa checks and corrects other annotaters work…
+
+--
+
+- phonological disagreement: 
+--
+_q_ or _q͡χ_?
+
+--
+
+- different contexts: lists of words are made using different principals.
+
+--
+
+- coding inconsistency: 
+--
+we code with **f** label burst of the stops and fricative part of the affricats?
+
+--
+
+- different sound recordings conditions: headset microphone vs. pure recorder' microphones; different recorders;
 
 ---
 class: inverse, center, middle
 
 # Results
+
 ---
+
 # Analysis
 
-- Annotation in Praat
-- Data extraction with [**Praat Script**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/Lennes%2C%20Moroz%20duration%2C%20info%20from%20other%20tier%20and%20some%20prefix%202%20tsv.praat)
+- Annotation in Praat by V. Zhigulskaya and ...
+- Validation of annotation with [**Praat Script by G. Moroz**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/annotation_check_1.praat)
+- Data extraction with [**Praat Script by S. Grawunder**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/segment_durations_1f.praat)
 - Data analysis and visulization [**with R**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/index.Rmd)
 
 ---
@@ -262,7 +292,7 @@ ggplot(aes(cd, vot, color = type))+
        x = "CD",
        caption = paste("Based on",
                        length(unique(results$speaker)),
-                       "speaker"))
+                       "speakers"))
 ```
 
 ---
