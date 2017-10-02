@@ -32,15 +32,60 @@ class: inverse, center, middle
 ---
 
 # Introduction
-Mehweb speaker: **q'ap'a** ‘lid’ 
+Zilo speaker: **sit'a** ‘straw’ 
 <audio controls>
-  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_mehweb_q'ap'a.WAV" type="audio/wav">
+  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_sit'a_soloma.WAV" type="audio/wav">
 </audio>
 
-Zilo speaker: **bot'i** ‘blind’ 
+Rutul speaker: **sit'aʔ** ‘bind’ 
 <audio controls>
-  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_bot'i.WAV" type="audio/wav">
+  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_kina_sit'a'_zavyazhi.WAV" type="audio/wav">
 </audio>
+
+---
+# Introduction
+
+put spectrum here
+
+---
+# Introducing VOT
+
+Lisker and Abramson (1964) proposed, with acoustic data from 11 languages, that the timing of glottal pulsing relative to supraglottal articulation would account for the great majority of homorganic consonantal distinctions traditionally said to depend on voicing, aspiration, "tensity", and the like (Abramson & Whalen 2017).
+
+---
+# Introducing VOT
+.pull-left[ snapshot from Lisker & Abramson 'VOT on tissue']
+
+.pull-right[
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vot.svg/400px-Vot.svg.png)
+
+from Wikipedia
+]
+
+---
+# Introducing VOT
+
+Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and simple) measure, even if not a universal discriminator. Examples of distinctions that are not covered are:
+aspirated voiced in Hindi: pH, p, b and bH (both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice) pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan: period of aspiration preceding a silent CD Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT)implosives: prevoiced and accompanied by breathy voice, not distinguished from voiced by VOT ejectives: see below.
+
+---
+# Introducing VOT
+
+Considering a sample of languages, (Ladefoged & Cho 2001) show that VOT measurements do not directly depend on sound types and oppositions
+
+Apache k, kh, k’ 
+
+Hupa k, kh, k’ 
+
+Navajo k, kh, k’ 
+
+Tlingit k, kh, k’ 
+
+Montana Salish k, k’
+
+Yapese k, k’
+
+on the right - fig 4 from Ladefoged & Cho 2001
 
 ---
 class: inverse, center, middle
@@ -65,8 +110,7 @@ map.feature(df_u$Language,
             latitude = df_u$lat,
             minimap = TRUE,
             minimap.position = "topleft",
-            color = df_u$color,
-            label.emphasize = list(1:13, "#BD2D2D"))
+            color = df_u$color)
 ```
 ---
 # Speakers by village
@@ -292,42 +336,6 @@ final_df %>%
 ```
 
 ---
-# Relative values of CD (medial)
-
-```{r}
-final_df %>% 
-  filter(closdur > 0, closdur < 0.31, folVowDur> 0, position == "medial", affric == "plain") %>% 
-  ggplot(aes(c_type, cd_n, fill = poa))+
-  geom_boxplot()+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "CD (normalized)", x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
-```
-
----
-# Relative values of VOT (medial)
-
-```{r}
-final_df %>%
-  filter(VOT > 0, folVowDur > 0, position == "medial", affric == "plain") %>%
-  ggplot(aes(c_type, vot_n, fill = poa)) +
-  geom_boxplot() +
-  theme_bw() +
-  theme(text = element_text(size = 20), legend.position = "bottom") +
-  labs(
-  x = "",
-  y = "VOT (normalized)",
-  caption = paste("Based on",
-  length(unique(results$filename)),
-  "speakers")
-  ) +
-  facet_grid(Gender ~ Language, margins = "Gender", scales = "free_x")
-```
-
----
 # Absolute values of CD ~ VOT (medial)
 ```{r}
 final_df %>% 
@@ -341,23 +349,6 @@ final_df %>%
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
 ```
-
----
-# Relative values of CD ~ VOT (medial) 
-
-```{r}
-final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
-  ggplot(aes(cd_n, vot_n, color = c_type))+
-  geom_point()+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender")
-```
-
 
 ---
 # Bagplots of absolute CD ~ VOT (medial)
@@ -461,21 +452,6 @@ final_df %>%
 ```
 
 ---
-# Bagplots of relative CD ~ VOT (medial)
-```{r}
-final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
-  ggplot(aes(cd_n, vot_n, fill = c_type))+
-  geom_bag(alpha = 0.2)+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender")
-```
-
----
 class: inverse, center, middle
 
 # Affricates: exploratory visualisation
@@ -512,42 +488,6 @@ final_df %>%
 ```
 
 ---
-# Relative values of CD (medial)
-
-```{r}
-final_df %>% 
-  filter(closdur > 0, closdur < 0.31, folVowDur> 0, position == "medial", affric == "affricate") %>% 
-  ggplot(aes(c_type, cd_n, fill = aff_type))+
-  geom_boxplot()+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "CD (normalized)", x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
-```
-
----
-# Relative values of VOT (medial)
-
-```{r}
-final_df %>%
-  filter(VOT > 0, folVowDur > 0, position == "medial", affric == "affricate") %>%
-  ggplot(aes(c_type, vot_n, fill = aff_type)) +
-  geom_boxplot() +
-  theme_bw() +
-  theme(text = element_text(size = 20), legend.position = "bottom") +
-  labs(
-  x = "",
-  y = "VOT (normalized)",
-  caption = paste("Based on",
-  length(unique(results$filename)),
-  "speakers")
-  ) +
-  facet_grid(Gender ~ Language, margins = "Gender", scales = "free_x")
-```
-
----
 # Absolute values of CD ~ VOT (medial)
 ```{r}
 final_df %>% 
@@ -563,43 +503,11 @@ final_df %>%
 ```
 
 ---
-# Relative values of CD ~ VOT (medial) 
-
-```{r}
-final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
-  ggplot(aes(cd_n, vot_n, color = c_type))+
-  geom_point()+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender")
-```
-
-
----
 # Bagplots of absolute CD ~ VOT (medial)
 ```{r}
 final_df %>% 
   filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
   ggplot(aes(closdur, VOT, fill = c_type))+
-  geom_bag(alpha = 0.2)+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender")
-```
-
----
-# Bagplots of relative CD ~ VOT (medial)
-```{r}
-final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
-  ggplot(aes(cd_n, vot_n, fill = c_type))+
   geom_bag(alpha = 0.2)+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
