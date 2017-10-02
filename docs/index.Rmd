@@ -209,6 +209,10 @@ But Vasilisa checks and corrects other annotators work…
 --
 : headset microphone vs. pure recorder' microphones; different recorders;
 
+--
+
+- huge number of annotators' typos and transcription inconsistency
+
 ---
 class: inverse, center, middle
 
@@ -240,8 +244,8 @@ results %>%
   mutate(repetition = ifelse(repetition == "--undefined--", "", repetition),
          folVowDur = as.double(ifelse(folVowDur == "--undefined--",NA, folVowDur)),
          geminate = ifelse(grepl("[ː:]", stop),"+g", "-g"),
-         aff_type = ifelse(grepl("s", stop),"dent", NA),
-         aff_type = ifelse(grepl("ʃ", stop),"alv", aff_type),
+         aff_type = ifelse(grepl("[sz]", stop),"dent", NA),
+         aff_type = ifelse(grepl("[ʃʒšžǯ]", stop),"alv", aff_type),
          aff_type = ifelse(grepl("ɬ", stop),"lat", aff_type),
          aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
          affric = ifelse(grepl("ɬ", stop),"affricate", affric),
@@ -253,7 +257,7 @@ results %>%
          cd_n = closdur/folVowDur,
          vot_n = VOT/folVowDur,
          utterance = paste0(context, "_", repetition),
-         poa = factor(poa, levels = c("bilabial", "dentalv",  "velar", "uvular")),
+         poa = factor(poa, levels = c("bilabial", "dental", "velar", "uvular")),
          c_type = ifelse(glott == "glottalic", "ej", voice),
          c_type = ifelse(geminate == "+g", paste0(c_type, ",", "+g"), c_type),
          c_type = factor(c_type, levels = c("+v", "-v", "ej", "-v,+g", "ej,+g"))) ->
