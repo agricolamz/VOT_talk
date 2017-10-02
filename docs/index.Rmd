@@ -43,10 +43,11 @@ Rutul speaker: **sit'aʔ** ‘bind’
 </audio>
 
 ---
-# Introduction
+# Zilo speaker: **sit'a** ‘straw’
 
-put spectrum here
-
+<audio controls>
+  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_sit'a_soloma.WAV" type="audio/wav">
+</audio>
 ---
 # Introducing VOT
 
@@ -66,7 +67,7 @@ from Wikipedia
 # Introducing VOT
 
 Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and simple) measure, even if not a universal discriminator. Examples of distinctions that are not covered are:
-aspirated voiced in Hindi: pH, p, b and bH (both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice) pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan: period of aspiration preceding a silent CD Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT)implosives: prevoiced and accompanied by breathy voice, not distinguished from voiced by VOT ejectives: see below.
+aspirated voiced in Hindi: pH, p, b and bH (both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice) pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan: period of aspiration preceding a silent CD Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT) implosives: prevoiced and accompanied by breathy voice, not distinguished from voiced by VOT ejectives: see below.
 
 ---
 # Introducing VOT
