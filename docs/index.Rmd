@@ -189,19 +189,19 @@ But Vasilisa checks and corrects other annotators work…
 
 - phonological disagreement
 --
-: _q_ or _q͡χ_? Do we  realyl have _voiced sounds_?
+: _q_ or _q͡χ_? Do we  really have _voiced sounds_?
 
 --
 
 - different contexts
 --
-: lists of words are made using different principals.
+: lists of words are made using different principles.
 
 --
 
 - coding inconsistency
 --
-: we code with **f** label burst of the stops and fricative part of the affricats?
+: we code with **f** label burst of the stops and fricative part of the affricates?
 
 --
 
@@ -272,7 +272,7 @@ final_df %>%
   labs(y = "CD", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -287,7 +287,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -300,10 +300,10 @@ final_df %>%
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "CD (normolised)", x = "", caption = paste("Based on",
+  labs(y = "CD (normalized)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -318,12 +318,12 @@ final_df %>%
   theme(text = element_text(size = 20), legend.position = "bottom") +
   labs(
   x = "",
-  y = "VOT (normolised)",
+  y = "VOT (normalized)",
   caption = paste("Based on",
   length(unique(results$filename)),
   "speakers")
   ) +
-  facet_grid(Gender ~ Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender ~ Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -338,7 +338,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 ---
@@ -354,7 +354,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 
@@ -456,7 +456,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 ---
@@ -471,7 +471,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 ---
@@ -492,7 +492,7 @@ final_df %>%
   labs(y = "CD", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -507,7 +507,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -520,10 +520,10 @@ final_df %>%
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "CD (normolised)", x = "", caption = paste("Based on",
+  labs(y = "CD (normalized)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -538,12 +538,12 @@ final_df %>%
   theme(text = element_text(size = 20), legend.position = "bottom") +
   labs(
   x = "",
-  y = "VOT (normolised)",
+  y = "VOT (normalized)",
   caption = paste("Based on",
   length(unique(results$filename)),
   "speakers")
   ) +
-  facet_grid(Gender ~ Language, margins = TRUE, scales = "free_x")
+  facet_grid(Gender ~ Language, margins = "Gender", scales = "free_x")
 ```
 
 ---
@@ -558,7 +558,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 ---
@@ -574,7 +574,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 
@@ -590,7 +590,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 ---
@@ -605,7 +605,7 @@ final_df %>%
   labs(x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = TRUE)
+  facet_grid(Gender~Language, margins = "Gender")
 ```
 
 ---
