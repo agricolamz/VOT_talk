@@ -219,11 +219,16 @@ class: inverse, center, middle
 # Analysis
 
 - Annotation in Praat by K. Filatov, V. Ivanova, A. Kopeckiy, G. Moroz, M. Sheyanova?, I. Sieber, A. Zakirova, V. Zhigulskaya
-- Validation of annotation with [**Praat Script by G. Moroz**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/annotation_check_1.praat)
 - Data extraction with [**Praat Script by S. Grawunder**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/segment_durations_1f.praat)
 - Data analysis and visulization [**with R**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/index.Rmd)
 
 ---
+class: inverse, center, middle
+
+# Stops: exploratory visualisation
+
+---
+
 # Absolute values of CD (medial)
 ```{r}
 results <- read_tsv("results.tsv")
@@ -235,6 +240,14 @@ results %>%
   mutate(repetition = ifelse(repetition == "--undefined--", "", repetition),
          folVowDur = as.double(ifelse(folVowDur == "--undefined--",NA, folVowDur)),
          geminate = ifelse(grepl("[ː:]", stop),"+g", "-g"),
+         aff_type = ifelse(grepl("s", stop),"dent", NA),
+         aff_type = ifelse(grepl("ʃ", stop),"alv", aff_type),
+         aff_type = ifelse(grepl("ɬ", stop),"lat", aff_type),
+         aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
+         affric = ifelse(grepl("ɬ", stop),"affricate", affric),
+         affric = ifelse(grepl("χ", stop),"affricate", affric),
+         aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
+         aff_type = factor(aff_type, levels = c("dent", "alv", "lat", "uv")),
          voice = ifelse(voice == "voiced", "+v", "-v")) %>% 
   mutate(VOT = fric + postfric,
          cd_n = closdur/folVowDur,
@@ -247,7 +260,7 @@ results %>%
   final_df
 
 final_df %>% 
-  filter(closdur > 0, position == "medial") %>% 
+  filter(closdur > 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(c_type, closdur, fill = poa))+
   geom_boxplot()+
   theme_bw()+
@@ -262,7 +275,7 @@ final_df %>%
 # Absolute values of VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, position == "medial") %>% 
+  filter(closdur > 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(c_type, VOT, fill = poa))+
   geom_boxplot()+
   theme_bw()+
@@ -278,7 +291,7 @@ final_df %>%
 
 ```{r}
 final_df %>% 
-  filter(closdur > 0, folVowDur> 0, position == "medial") %>% 
+  filter(closdur > 0, folVowDur> 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(c_type, cd_n, fill = poa))+
   geom_boxplot()+
   theme_bw()+
@@ -294,7 +307,7 @@ final_df %>%
 
 ```{r}
 final_df %>%
-  filter(VOT > 0, folVowDur > 0, position == "medial") %>%
+  filter(VOT > 0, folVowDur > 0, position == "medial", affric == "plain") %>%
   ggplot(aes(c_type, vot_n, fill = poa)) +
   geom_boxplot() +
   theme_bw() +
@@ -313,7 +326,7 @@ final_df %>%
 # Absolute values of CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, position == "medial") %>% 
+  filter(closdur > 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(closdur, VOT, color = c_type))+
   geom_point()+
   theme_bw()+
@@ -329,7 +342,7 @@ final_df %>%
 
 ```{r}
 final_df %>% 
-  filter(closdur > 0, position == "medial") %>% 
+  filter(closdur > 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(cd_n, vot_n, color = c_type))+
   geom_point()+
   theme_bw()+
@@ -431,7 +444,7 @@ geom_bag <- function(mapping = NULL, data = NULL,
 }
 
 final_df %>% 
-  filter(closdur > 0, position == "medial") %>% 
+  filter(closdur > 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(closdur, VOT, fill = c_type))+
   geom_bag(alpha = 0.2)+
   theme_bw()+
@@ -446,7 +459,7 @@ final_df %>%
 # Bagplots of relative CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, position == "medial") %>% 
+  filter(closdur > 0, position == "medial", affric == "plain") %>% 
   ggplot(aes(cd_n, vot_n, fill = c_type))+
   geom_bag(alpha = 0.2)+
   theme_bw()+
@@ -456,6 +469,153 @@ final_df %>%
                        "speakers"))+
   facet_grid(Gender~Language, margins = TRUE)
 ```
+
+---
+class: inverse, center, middle
+
+# Affricates: exploratory visualisation
+
+---
+
+# Absolute values of CD (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(c_type, closdur, fill = aff_type))+
+  geom_boxplot()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(y = "CD", x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+```
+
+---
+# Absolute values of VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(c_type, VOT, fill = aff_type))+
+  geom_boxplot()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+```
+
+---
+# Relative values of CD (medial)
+
+```{r}
+final_df %>% 
+  filter(closdur > 0, folVowDur> 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(c_type, cd_n, fill = aff_type))+
+  geom_boxplot()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(y = "CD (normolised)", x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE, scales = "free_x")
+```
+
+---
+# Relative values of VOT (medial)
+
+```{r}
+final_df %>%
+  filter(VOT > 0, folVowDur > 0, position == "medial", affric == "affricate") %>%
+  ggplot(aes(c_type, vot_n, fill = aff_type)) +
+  geom_boxplot() +
+  theme_bw() +
+  theme(text = element_text(size = 20), legend.position = "bottom") +
+  labs(
+  x = "",
+  y = "VOT (normolised)",
+  caption = paste("Based on",
+  length(unique(results$filename)),
+  "speakers")
+  ) +
+  facet_grid(Gender ~ Language, margins = TRUE, scales = "free_x")
+```
+
+---
+# Absolute values of CD ~ VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(closdur, VOT, color = c_type))+
+  geom_point()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE)
+```
+
+---
+# Relative values of CD ~ VOT (medial) 
+
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(cd_n, vot_n, color = c_type))+
+  geom_point()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE)
+```
+
+
+---
+# Bagplots of absolute CD ~ VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(closdur, VOT, fill = c_type))+
+  geom_bag(alpha = 0.2)+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE)
+```
+
+---
+# Bagplots of relative CD ~ VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(cd_n, vot_n, fill = c_type))+
+  geom_bag(alpha = 0.2)+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = TRUE)
+```
+
+---
+class: inverse, center, middle
+
+# Preliminary results
+
+---
+
+class: inverse, center, middle
+
+# Statistical tests
+
+---
 
 
 ---
