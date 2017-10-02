@@ -44,11 +44,21 @@ Rutul speaker: **sit'aʔ** ‘bind’
 
 ---
 # Zilo speaker: **sit'a** ‘straw’
-
+![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_zilo_sit'a_soloma.png)
 <audio controls>
   <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_sit'a_soloma.WAV" type="audio/wav">
 </audio>
+
 ---
+
+# Rutul speaker: **sit'aʔ** ‘bind’
+![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_kina_sit'a'_zavyazhi.png)
+<audio controls>
+  <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_kina_sit'a'_zavyazhi.WAV" type="audio/wav">
+</audio>
+
+---
+
 # Introducing VOT
 
 Lisker and Abramson (1964) proposed, with acoustic data from 11 languages, that the timing of glottal pulsing relative to supraglottal articulation would account for the great majority of homorganic consonantal distinctions traditionally said to depend on voicing, aspiration, "tensity", and the like (Abramson & Whalen 2017).
