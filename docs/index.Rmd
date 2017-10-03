@@ -82,6 +82,24 @@ Rutul speaker: **sit'aʔ** ‘bind’
 </audio>
 ]
 
+---
+## CD and VOT values for **sit'a** ‘straw’ and **sit'aʔ** ‘bind’
+
+```{r}
+final_df %>% 
+  filter(grepl("sit'aʔ|sit'a", word), c_type == "ej") %>% 
+  rename(CD = closdur) %>% 
+  select(Language, CD, VOT, Gender) %>% 
+  gather(cd_vot, value, c(CD, VOT)) %>% 
+  ggplot(aes(Language, value))+
+  geom_boxplot()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(y = "Time (s)", x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~cd_vot, margins = "Gender", scales = "free_x")
+```
 
 ---
 
@@ -106,11 +124,16 @@ In 1964, Lisker and Abramson "proposed, with acoustic data from 11 languages, th
 
 Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and simple) measure, even if not a universal discriminator. Examples of distinctions that are not covered are:
 - aspirated voiced in Hindi: pH, p, b and bH. 
-- Both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice) 
-- pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan: period of aspiration preceding a silent CD 
-- Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT) 
+-- both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice)
+
+- pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan
+-- period of aspiration preceding a silent CD
+
+- Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT)
+
 - implosives: prevoiced and accompanied by breathy voice, not distinguished from voiced by VOT 
-- ejectives: see below.
+
+- ejectives: see next slide
 
 ---
 # Introducing VOT
@@ -120,10 +143,15 @@ Considering a sample of languages, (Ladefoged & Cho 2001) show that VOT measurem
 .pull-left[
 
 - Apache k, kʰ, k’ 
+
 - Hupa k, kʰ, k’ 
+
 - Navajo k, kʰ, k’ 
+
 - Tlingit k, kʰ, k’ 
+
 - Montana Salish k, k’
+
 - Yapese k, k’
 
 ]
@@ -133,25 +161,6 @@ Considering a sample of languages, (Ladefoged & Cho 2001) show that VOT measurem
 ]
 
 In our talk (and study), we want to consider how East Caucasian languages perform in terms of VOT, comparing voiceless and ejective stops.
-
----
-## CD and VOT values for **sit'a** ‘straw’ and **sit'aʔ** ‘bind’
-
-```{r}
-final_df %>% 
-  filter(grepl("sit'aʔ|sit'a", word), c_type == "ej") %>% 
-  rename(CD = closdur) %>% 
-  select(Language, CD, VOT, Gender) %>% 
-  gather(cd_vot, value, c(CD, VOT)) %>% 
-  ggplot(aes(Language, value))+
-  geom_boxplot()+
-  theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "Time (s)", x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))+
-  facet_grid(Gender~cd_vot, margins = "Gender", scales = "free_x")
-```
 
 ---
 class: inverse, center, middle
@@ -249,13 +258,24 @@ df_plot %>%
 # Features of stops and affricates
 
 - **POA**: labial; dentalv; lateral; velar; uvular
+
+
 - **manner**: stops; affricates
+
+
 - **phonation type**: voiced; voiceless; ejective
+
+
 - **geminates**
+
+
+ADDITIONALLY:
+
 - **labialization**
+
+
 - **pharyngealization**
-- **phonological context**: initial; medial
-- **type of utterance**: first, second and third repetitions; carrier phrase
+
 
 ---
 # Measurements
@@ -281,9 +301,11 @@ The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_11:
 
 - only existing words (non-words were at first used in Mehweb and then discarded)
 - three repetitions followed by a carrier phrase
+- all places of articulation X phonation type -> sound type
+- initial and medial position
 - when possible, two or more lexical items recorded for each sound and in each position
 - keep the wordlist manageable (several dozens up to 100 words, 20-40 minutes recording session)
-- aCa > VCa > VCi, VCe (but not in Andi)
+- phonetic context preferences: aCa > VCa > VCi, VCe (but not in Andi)
 - stress position not controlled 
 - eliciting words by a Russian translation, sometimes the target word hinted in a half voice or, ideally, distorted
 
