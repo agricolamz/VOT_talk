@@ -64,7 +64,7 @@ Rutul speaker: **sit'aʔ** ‘bind’
 
 # Introducing VOT
 
-Lisker and Abramson (1964) proposed, with acoustic data from 11 languages, that the timing of glottal pulsing relative to supraglottal articulation would account for the great majority of homorganic consonantal distinctions traditionally said to depend on voicing, aspiration, "tensity", and the like Abramson and Whalen (2017).
+In 1964, Lisker and Abramson "proposed, with acoustic data from 11 languages, that the timing of glottal pulsing relative to supraglottal articulation would account for the great majority of homorganic consonantal distinctions traditionally said to depend on voicing, aspiration, "tensity", and the like" (Abramson and Whalen 2017).
 
 ---
 
@@ -81,12 +81,17 @@ Lisker and Abramson (1964) proposed, with acoustic data from 11 languages, that 
 # Introducing VOT
 
 Abramson &amp; Whalen (2017) argue that VOT is a cross-linguistically useful (and simple) measure, even if not a universal discriminator. Examples of distinctions that are not covered are:
-aspirated voiced in Hindi: pH, p, b and bH (both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice) pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan: period of aspiration preceding a silent CD Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT) implosives: prevoiced and accompanied by breathy voice, not distinguished from voiced by VOT ejectives: see below.
+- aspirated voiced in Hindi: pH, p, b and bH. 
+- Both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice) 
+- pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan: period of aspiration preceding a silent CD 
+- Korean: unaspirated, slightly aspirated and strongly aspirated (degree of VOT) 
+- implosives: prevoiced and accompanied by breathy voice, not distinguished from voiced by VOT 
+- ejectives: see below.
 
 ---
 # Introducing VOT
 
-Considering a sample of languages, Ladefoged and Cho (2001) show that VOT measurements do not directly depend on sound types and oppositions
+Considering a sample of languages, (Ladefoged &amp; Cho 2001) show that VOT measurements do not directly depend on sound types and oppositions. Below is the sub-sample that has ejectives:
 
 .pull-left[
 
@@ -102,6 +107,8 @@ Considering a sample of languages, Ladefoged and Cho (2001) show that VOT measur
 .pull-right[
 ![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_LadefogedCho.png)
 ]
+
+In our talk (and study), we want to consider how East Caucasian languages perform in terms of VOT, comparing voiceless and ejective stops.
 
 ---
 class: inverse, center, middle
@@ -123,14 +130,14 @@ class: inverse, center, middle
 ---
 # Features of stops and affricates
 
-- **POA**: labial; dental; lateral; postalveolar; velar; uvular
+- **POA**: labial; dentalv; lateral; velar; uvular
 - **manner**: stops; affricates
 - **phonation type**: voiced; voiceless; ejective
-- **gemination**
+- **geminates**
 - **labialization**
 - **pharyngealization**
 - **phonological context**: initial; medial
-- **type of utterance**: first; second; third; carrier phrases
+- **type of utterance**: first, second and third repetitions; carrier phrase
 
 ---
 # Measurements
@@ -154,15 +161,24 @@ The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_11:
 ---
 # Lists of words
 
+- only existing words (non-words were at first used in Mehweb and then discarded)
+- three repetitions followed by a carrier phrase
+- when possible, two or more lexical items recorded for each sound and in each position
+- keep the wordlist manageable (several dozens up to 100 words, 20-40 minutes recording session)
+- aCa &gt; VCa &gt; VCi, VCe (but not in Andi)
+- stress position not controlled 
+- eliciting words by a Russian translation, sometimes the target word hinted in a half voice or, ideally, distorted
+
 ---
 class: inverse, center, middle
 
-# Results
+# Results so far
 
 ---
 
 # Analysis
 
+- 8 Mehwebs, 10 Kinas (Rutul), 9 Zilos (Andi)
 - Annotation in Praat by K. Filatov, V. Ivanova, A. Kopeckiy, G. Moroz, M. Sheyanova?, I. Sieber, A. Zakirova, V. Zhigulskaya
 - Data extraction with [**Praat Script by S. Grawunder**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/segment_durations_1f.praat)
 - Data analysis and visulization [**with R**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/index.Rmd)
@@ -232,35 +248,43 @@ class: inverse, center, middle
 
 
 ---
-# Problems
+# Methodological issues
 
-- reliability of annotations made by different annotators
+- reliability  and comparability  of annotations made by different annotators
 --
-: we need whole (partial?) reannatation and then we need to compare the annotations to calculate
+: we need selective re-annotation and to compare the annotations and calculate
   - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
   - agreement for time segmentation that we annotated (e. g. **??**).
 
 --
 
-But Vasilisa checks and corrects other annotators work…
+But Garik and Vasilisa check and correct eventual mistakes in annotation.
 
 --
 
 - phonological disagreement
 --
-: _q_ or _q͡χ_? Do we  really have _voiced sounds_?
+: _q_ or _q͡χ_?
 
 --
 
 - different contexts
 --
-: lists of words are made using different principles.
+:  lists of words were compiled using different principles (no voiced in Mehweb, very few speakers in Archi, no control for vowel quality in Andi etc.).
+
+--
+
+- Possibility of loan phonetics?
 
 --
 
 - coding inconsistency
 --
-: we code with **f** label burst of the stops and fricative part of the affricates?
+: we code with **f** burst of the stops and fricative part of the affricates.
+
+--
+
+- speaker inconsistency: some speak casually and some dictate
 
 --
 
