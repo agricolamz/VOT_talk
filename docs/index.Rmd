@@ -23,6 +23,39 @@ knitr::opts_chunk$set(echo = FALSE,
 library(tidyverse)
 library(lingtypology)
 library(ggridges)
+
+df <- read_tsv("speakers.csv")
+df %>% 
+  distinct(Language, Location, lon, lat, color) -> 
+  df_u
+
+results <- read_tsv("results.tsv")
+correspondence <- read_tsv("correspondence.tsv")
+
+results %>% 
+  left_join(correspondence) %>% 
+  left_join(df) %>% 
+  mutate(repetition = ifelse(repetition == "--undefined--", "", repetition),
+         folVowDur = as.double(ifelse(folVowDur == "--undefined--",NA, folVowDur)),
+         geminate = ifelse(grepl("[ː:]", stop),"+g", "-g"),
+         aff_type = ifelse(grepl("[sz]", stop),"dent", NA),
+         aff_type = ifelse(grepl("[ʃʒšžǯ]", stop),"alv", aff_type),
+         aff_type = ifelse(grepl("ɬ", stop),"lat", aff_type),
+         aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
+         affric = ifelse(grepl("ɬ", stop),"affricate", affric),
+         affric = ifelse(grepl("χ", stop),"affricate", affric),
+         aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
+         aff_type = factor(aff_type, levels = c("dent", "alv", "lat", "uv")),
+         voice = ifelse(voice == "voiced", "+v", "-v")) %>% 
+  mutate(VOT = fric + postfric,
+         cd_n = closdur/folVowDur,
+         vot_n = VOT/folVowDur,
+         utterance = paste0(context, "_", repetition),
+         poa = factor(poa, levels = c("bilabial", "dental", "velar", "uvular")),
+         c_type = ifelse(glott == "glottalic", "ej", voice),
+         c_type = ifelse(geminate == "+g", paste0(c_type, ",", "+g"), c_type),
+         c_type = factor(c_type, levels = c("+v", "-v", "ej", "-v,+g", "ej,+g"))) ->
+  final_df
 ```
 
 class: inverse, center, middle
@@ -49,7 +82,9 @@ Rutul speaker: **sit'aʔ** ‘bind’
 </audio>
 ]
 
+
 ---
+
 
 # Introducing VOT
 
@@ -100,6 +135,24 @@ Considering a sample of languages, (Ladefoged & Cho 2001) show that VOT measurem
 In our talk (and study), we want to consider how East Caucasian languages perform in terms of VOT, comparing voiceless and ejective stops.
 
 ---
+## CD and VOT values for **sit'a** ‘straw’ and **sit'aʔ** ‘bind’
+
+```{r}
+final_df %>% 
+  filter(grepl("sit'aʔ|sit'a", word), c_type == "ej") %>% 
+  select(Language, closdur, VOT, Gender) %>% 
+  gather(cd_vot, value, c(closdur, VOT)) %>% 
+  ggplot(aes(cd_vot, value))+
+  geom_boxplot()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(y = "Time (s)", x = "", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
+```
+
+---
 class: inverse, center, middle
 
 # Data
@@ -108,10 +161,6 @@ class: inverse, center, middle
 # Villages
 
 ```{r}
-df <- read_tsv("speakers.csv")
-df %>% 
-  distinct(Language, Location, lon, lat, color) -> 
-  df_u
 map.feature(df_u$Language,
             features = df_u$Language,
             tile = "Stamen.TerrainBackground",
@@ -260,34 +309,6 @@ class: inverse, center, middle
 
 # Absolute values of CD (medial)
 ```{r}
-results <- read_tsv("results.tsv")
-correspondence <- read_tsv("correspondence.tsv")
-
-results %>% 
-  left_join(correspondence) %>% 
-  left_join(df) %>% 
-  mutate(repetition = ifelse(repetition == "--undefined--", "", repetition),
-         folVowDur = as.double(ifelse(folVowDur == "--undefined--",NA, folVowDur)),
-         geminate = ifelse(grepl("[ː:]", stop),"+g", "-g"),
-         aff_type = ifelse(grepl("[sz]", stop),"dent", NA),
-         aff_type = ifelse(grepl("[ʃʒšžǯ]", stop),"alv", aff_type),
-         aff_type = ifelse(grepl("ɬ", stop),"lat", aff_type),
-         aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
-         affric = ifelse(grepl("ɬ", stop),"affricate", affric),
-         affric = ifelse(grepl("χ", stop),"affricate", affric),
-         aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
-         aff_type = factor(aff_type, levels = c("dent", "alv", "lat", "uv")),
-         voice = ifelse(voice == "voiced", "+v", "-v")) %>% 
-  mutate(VOT = fric + postfric,
-         cd_n = closdur/folVowDur,
-         vot_n = VOT/folVowDur,
-         utterance = paste0(context, "_", repetition),
-         poa = factor(poa, levels = c("bilabial", "dental", "velar", "uvular")),
-         c_type = ifelse(glott == "glottalic", "ej", voice),
-         c_type = ifelse(geminate == "+g", paste0(c_type, ",", "+g"), c_type),
-         c_type = factor(c_type, levels = c("+v", "-v", "ej", "-v,+g", "ej,+g"))) ->
-  final_df
-
 final_df %>% 
   filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
   ggplot(aes(c_type, closdur, fill = poa))+
