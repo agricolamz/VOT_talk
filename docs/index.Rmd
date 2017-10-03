@@ -123,7 +123,7 @@ In 1964, Lisker and Abramson "proposed, with acoustic data from 11 languages, th
 # Introducing VOT
 
 Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and simple) measure, even if not a universal discriminator. Examples of distinctions that are not covered are:
-- aspirated voiced in Hindi: pH, p, b and bH. 
+- aspirated voiced in Hindi: pʰ, p, b and bʰ. 
 -- both latter sound types show negative VOT, bH showing breathy voice filling before the onset of modal voice)
 
 - pre-aspirated in Swedish, Icelandic, Scots Gaelic and Tarascan
@@ -271,9 +271,6 @@ df_plot %>%
 
 
 
-
-
-
 ADDITIONALLY:
 
 - **labialization**
@@ -285,26 +282,13 @@ ADDITIONALLY:
 ---
 # Measurements
 
-- Closure Duration (CD)
-
-
-
-- Voice Onset Time (VOT)
-
-  - Fricative part (FP)
-  
-  - Post-fricative part (PF)
-  
-  
-  
+- Closure Duration (cd)
+- Voice Onset Time (vot)
+  - Fricative part (f)
+  - Post-fricative part (pf)
 - Following vowel duration
-
-  - Creaky voice part of the vowel (CV)
-  
-  - Modal Voice part (M)
-  
-  
-  
+  - Creaky voice part of the vowel (cv)
+  - Modal Voice part (m)
 - (Intensity contour)
 
 ---
@@ -629,30 +613,38 @@ final_df %>%
 # Methodological issues
 
 - reliability  and comparability  of annotations made by different annotators
+--
   - we need selective re-annotation and to compare the annotations and calculate
   - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
   - agreement for time segmentation that we annotated (e. g. **??**).
 --
 Eventually, gross mistakes in annotation are corrected by Garik, Vasilisa and Sven.
+--
 
 - coding inconsistency
 --
 : we code with **f** burst of the stops and fricative part of the affricates.
+
 --
+
 - phonological interpretations
 --
 : _q_ or _q͡χ_?
+
 --
 
 - different contexts
 --
 :  lists of words were compiled using different principles (no voiced in Mehweb, very few speakers in Archi, no control for the following vowel quality in Andi etc.).
+
 --
 
 - possibility of loan phonetics?
+
 --
 
 - speaker inconsistency: some speak casually and some dictate (normalization?)
+
 --
 
 - different sound recordings conditions
@@ -665,13 +657,13 @@ class: center, middle
 
 # Thanks!
 
-M. Daniel (misha.daniel@gmail.com)
+Misha Daniel (misha.daniel@gmail.com)
 
-S. Grawunder (grawunder@eva.mpg.de )
+Sven Grawunder (grawunder@eva.mpg.de )
 
-G. Moroz (agricolamz@gmail.com)
+Garik Moroz (agricolamz@gmail.com)
 
-V. Zhigulskaya (vasilek224@bk.ru)
+Vasilisa Zhigulskaya (vasilek224@bk.ru)
 
 Slides created with the following R packages:
 
