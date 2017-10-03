@@ -482,6 +482,59 @@ final_df %>%
 ```
 
 ---
+class: inverse, center, middle
+
+# Affricates: what if we treat VOT as a duration of postfricative part?
+
+---
+
+# Absolute values of VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, closdur < 0.31, postfric > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(c_type, postfric, fill = aff_type))+
+  geom_boxplot()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", y = "post-fricative part", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
+```
+
+---
+# Absolute values of CD ~ VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, closdur < 0.31, postfric > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(closdur, postfric, color = c_type))+
+  geom_point()+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "", y = "post-fricative part", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = "Gender")
+```
+
+---
+# Bagplots of absolute CD ~ VOT (medial)
+```{r}
+final_df %>% 
+  filter(closdur > 0, closdur < 0.31, postfric > 0, position == "medial", affric == "affricate") %>% 
+  ggplot(aes(closdur, postfric, fill = c_type))+
+  geom_bag(alpha = 0.2)+
+  theme_bw()+
+  theme(text = element_text(size=20), legend.position="bottom")+
+  labs(x = "",y = "post-fricative part", caption = paste("Based on",
+                       length(unique(results$filename)),
+                       "speakers"))+
+  facet_grid(Gender~Language, margins = "Gender")
+```
+
+
+
+---
 # Problems
 
 - reliability of annotations made by different annotators
