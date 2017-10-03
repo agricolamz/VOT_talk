@@ -1,2 +1,1 @@
-Our prezi!
-Wow!
+Presentation for ConLab seminar
