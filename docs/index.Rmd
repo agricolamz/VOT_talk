@@ -140,16 +140,17 @@ In our talk (and study), we want to consider how East Caucasian languages perfor
 ```{r}
 final_df %>% 
   filter(grepl("sit'aʔ|sit'a", word), c_type == "ej") %>% 
-  select(Language, closdur, VOT, Gender) %>% 
-  gather(cd_vot, value, c(closdur, VOT)) %>% 
-  ggplot(aes(cd_vot, value))+
+  rename(CD = closdur) %>% 
+  select(Language, CD, VOT, Gender) %>% 
+  gather(cd_vot, value, c(CD, VOT)) %>% 
+  ggplot(aes(Language, value))+
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
   labs(y = "Time (s)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
-  facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
+  facet_grid(Gender~cd_vot, margins = "Gender", scales = "free_x")
 ```
 
 ---
