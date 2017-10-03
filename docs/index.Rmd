@@ -56,16 +56,14 @@ Rutul speaker: **sit'aʔ** ‘bind’
 Lisker and Abramson (1964) proposed, with acoustic data from 11 languages, that the timing of glottal pulsing relative to supraglottal articulation would account for the great majority of homorganic consonantal distinctions traditionally said to depend on voicing, aspiration, "tensity", and the like Abramson and Whalen (2017).
 
 ---
-# Introducing VOT
-.pull-left[ ![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_LiskerAbramson.png)
 
-from Lisker and Abramson (1964)
+.pull-left[ ![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_LiskerAbramson.png)
 ]
 
 .pull-right[
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vot.svg/400px-Vot.svg.png)
-
-from Wikipedia
+.pull-left[Lisker and Abramson (1964)]
+.pull-right[from Wikipedia]
 ]
 
 ---
@@ -77,21 +75,22 @@ aspirated voiced in Hindi: pH, p, b and bH (both latter sound types show negativ
 ---
 # Introducing VOT
 
-Considering a sample of languages, (Ladefoged & Cho 2001) show that VOT measurements do not directly depend on sound types and oppositions
+Considering a sample of languages, Ladefoged and Cho (2001) show that VOT measurements do not directly depend on sound types and oppositions
 
-Apache k, kh, k’ 
+.pull-left[
 
-Hupa k, kh, k’ 
+- Apache k, kʰ, k’ 
+- Hupa k, kʰ, k’ 
+- Navajo k, kʰ, k’ 
+- Tlingit k, kʰ, k’ 
+- Montana Salish k, k’
+- Yapese k, k’
 
-Navajo k, kh, k’ 
+]
 
-Tlingit k, kh, k’ 
-
-Montana Salish k, k’
-
-Yapese k, k’
-
-on the right - fig 4 from Ladefoged & Cho 2001
+.pull-right[
+![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_LadefogedCho.png)
+]
 
 ---
 class: inverse, center, middle
