@@ -32,6 +32,7 @@ class: inverse, center, middle
 ---
 
 # Introduction
+
 Zilo speaker: **sit'a** ‘straw’ 
 <audio controls>
   <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_sit'a_soloma.WAV" type="audio/wav">
@@ -43,19 +44,20 @@ Rutul speaker: **sit'aʔ** ‘bind’
 </audio>
 
 ---
-# Zilo speaker: **sit'a** ‘straw’
-![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_zilo_sit'a_soloma.png)
+
+![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_examples.png)
+
+.pull-right[
 <audio controls>
   <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_zilo_sit'a_soloma.WAV" type="audio/wav">
 </audio>
+]
 
----
-
-# Rutul speaker: **sit'aʔ** ‘bind’
-![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_kina_sit'a'_zavyazhi.png)
+.pull-left[
 <audio controls>
   <source src="https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/a_kina_sit'a'_zavyazhi.WAV" type="audio/wav">
 </audio>
+]
 
 ---
 
@@ -227,47 +229,6 @@ The word **kʷatʃʼa** ‘paw’ by Zilo speaker m_11:
 
 ---
 # Lists of words
-
----
-# Problems
-
-- reliability of annotations made by different annotators
---
-: we need whole (partial?) reannatation and then we need to compare the annotations to calculate
-  - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
-  - agreement for time segmentation that we annotated (e. g. **??**).
-
---
-
-But Vasilisa checks and corrects other annotators work…
-
---
-
-- phonological disagreement
---
-: _q_ or _q͡χ_? Do we  really have _voiced sounds_?
-
---
-
-- different contexts
---
-: lists of words are made using different principles.
-
---
-
-- coding inconsistency
---
-: we code with **f** label burst of the stops and fricative part of the affricates?
-
---
-
-- different sound recordings conditions
---
-: headset microphone vs. pure recorder' microphones; different recorders;
-
---
-
-- huge number of annotators' typos and transcription inconsistency
 
 ---
 class: inverse, center, middle
@@ -529,18 +490,45 @@ final_df %>%
 ```
 
 ---
-class: inverse, center, middle
+# Problems
 
-# Preliminary results
+- reliability of annotations made by different annotators
+--
+: we need whole (partial?) reannatation and then we need to compare the annotations to calculate
+  - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
+  - agreement for time segmentation that we annotated (e. g. **??**).
 
----
+--
 
-class: inverse, center, middle
+But Vasilisa checks and corrects other annotators work…
 
-# Statistical tests
+--
 
----
+- phonological disagreement
+--
+: _q_ or _q͡χ_? Do we  really have _voiced sounds_?
 
+--
+
+- different contexts
+--
+: lists of words are made using different principles.
+
+--
+
+- coding inconsistency
+--
+: we code with **f** label burst of the stops and fricative part of the affricates?
+
+--
+
+- different sound recordings conditions
+--
+: headset microphone vs. pure recorder' microphones; different recorders;
+
+--
+
+- huge number of annotators' typos and transcription inconsistency
 
 ---
 
