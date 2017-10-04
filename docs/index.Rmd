@@ -47,7 +47,11 @@ results %>%
          aff_type = ifelse(grepl("χ", stop),"uv", aff_type),
          aff_type = factor(aff_type, levels = c("dent", "alv", "lat", "uv")),
          voice = ifelse(voice == "voiced", "+v", "-v")) %>% 
-  mutate(VOT = fric + postfric,
+  mutate(fric = fric * 1000,
+         postfric = postfric*1000,
+         folVowDur = folVowDur*1000,
+         closdur = closdur*1000,
+         VOT = fric + postfric,
          cd_n = closdur/folVowDur,
          vot_n = VOT/folVowDur,
          utterance = paste0(context, "_", repetition),
@@ -95,7 +99,7 @@ final_df %>%
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "Time (s)", x = "", caption = paste("Based on",
+  labs(y = "Time (ms)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~cd_vot, margins = "Gender", scales = "free_x")
@@ -348,12 +352,12 @@ class: inverse, center, middle
 # Absolute values of CD (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "plain") %>% 
   ggplot(aes(c_type, closdur, fill = poa))+
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "CD", x = "", caption = paste("Based on",
+  labs(y = "CD (ms)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
@@ -363,12 +367,12 @@ final_df %>%
 # Absolute values of VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "plain") %>% 
   ggplot(aes(c_type, VOT, fill = poa))+
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
+  labs(x = "", y = "VOT (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
@@ -378,12 +382,12 @@ final_df %>%
 # Absolute values of CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "plain") %>% 
   ggplot(aes(closdur, VOT, color = c_type))+
   geom_point()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
+  labs(x = "CD (ms)", y = "VOT (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
@@ -479,12 +483,12 @@ geom_bag <- function(mapping = NULL, data = NULL,
 }
 
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "plain") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "plain") %>% 
   ggplot(aes(closdur, VOT, fill = c_type))+
   geom_bag(alpha = 0.2)+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
+  labs(x = "CD (ms)", y = "VOT (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
@@ -500,12 +504,12 @@ class: inverse, center, middle
 # Absolute values of CD (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "affricate") %>% 
   ggplot(aes(c_type, closdur, fill = aff_type))+
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(y = "CD", x = "", caption = paste("Based on",
+  labs(y = "CD (ms)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
@@ -515,12 +519,12 @@ final_df %>%
 # Absolute values of VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "affricate") %>% 
   ggplot(aes(c_type, VOT, fill = aff_type))+
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
+  labs(x = "", y = "VOT (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
@@ -530,12 +534,12 @@ final_df %>%
 # Absolute values of CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "affricate") %>% 
   ggplot(aes(closdur, VOT, color = c_type))+
   geom_point()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
+  labs(x = "CD (ms)", y = "VOT (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
@@ -545,12 +549,12 @@ final_df %>%
 # Bagplots of absolute CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, position == "medial", affric == "affricate") %>% 
   ggplot(aes(closdur, VOT, fill = c_type))+
   geom_bag(alpha = 0.2)+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", caption = paste("Based on",
+  labs(x = "CD (ms)", y = "VOT (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
@@ -566,12 +570,12 @@ class: inverse, center, middle
 # Absolute values of VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, postfric > 0, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, postfric > 0, position == "medial", affric == "affricate") %>% 
   ggplot(aes(c_type, postfric, fill = aff_type))+
   geom_boxplot()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", y = "post-fricative part", caption = paste("Based on",
+  labs(x = "", y = "post-fricative part (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender", scales = "free_x")
@@ -581,12 +585,12 @@ final_df %>%
 # Absolute values of CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, postfric > 0, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, postfric > 0, position == "medial", affric == "affricate") %>% 
   ggplot(aes(closdur, postfric, color = c_type))+
   geom_point()+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "", y = "post-fricative part", caption = paste("Based on",
+  labs(x = "CD (ms)", y = "post-fricative part (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
@@ -596,12 +600,12 @@ final_df %>%
 # Bagplots of absolute CD ~ VOT (medial)
 ```{r}
 final_df %>% 
-  filter(closdur > 0, closdur < 0.31, postfric > 0, position == "medial", affric == "affricate") %>% 
+  filter(closdur > 0, VOT > 0, closdur < 310, postfric > 0, position == "medial", affric == "affricate") %>% 
   ggplot(aes(closdur, postfric, fill = c_type))+
   geom_bag(alpha = 0.2)+
   theme_bw()+
   theme(text = element_text(size=20), legend.position="bottom")+
-  labs(x = "",y = "post-fricative part", caption = paste("Based on",
+  labs(x = "CD (ms)",y = "post-fricative part (ms)", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
   facet_grid(Gender~Language, margins = "Gender")
@@ -613,12 +617,14 @@ final_df %>%
 # Methodological issues
 
 - reliability  and comparability  of annotations made by different annotators
+
 --
+
   - we need selective re-annotation and to compare the annotations and calculate
   - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
-  - agreement for time segmentation that we annotated (e. g. **??**).
---
+  - agreement for time segmentation that we annotated (e. g. **??**). --
 Eventually, gross mistakes in annotation are corrected by Garik, Vasilisa and Sven.
+
 --
 
 - coding inconsistency
