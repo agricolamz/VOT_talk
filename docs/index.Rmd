@@ -2,7 +2,7 @@
 title: "Daghestanian stops"
 subtitle: "VOT, CD and other stories"
 author: "M. Daniel, S. Grawunder, G. Moroz, V. Zhigulskaya"
-date: "2017/10/03"
+date: "2017/11/28"
 output:
   xaringan::moon_reader:
     css: ["default", "my_theme.css"]
@@ -24,13 +24,13 @@ library(tidyverse)
 library(lingtypology)
 library(ggridges)
 
-df <- read_tsv("speakers.csv")
+df <- read_tsv("data/speakers.csv")
 df %>% 
   distinct(Language, Location, lon, lat, color) -> 
   df_u
 
-results <- read_tsv("results.tsv")
-correspondence <- read_tsv("correspondence.tsv")
+results <- read_tsv("data/results.tsv")
+correspondence <- read_tsv("data/correspondence.tsv")
 
 results %>% 
   left_join(correspondence) %>% 
@@ -59,6 +59,34 @@ results %>%
          c_type = ifelse(glott == "glottalic", "ej", voice),
          c_type = ifelse(geminate == "+g", paste0(c_type, ",", "+g"), c_type),
          c_type = factor(c_type, levels = c("+v", "-v", "ej", "-v,+g", "ej,+g"))) ->
+  final_df
+
+final_df %>% 
+  filter(prevVowel != "ʃ",
+         prevVowel != "m",
+         prevVowel != "n",
+         prevVowel != "l",
+         prevVowel != "(n",
+         prevVowel != "q'",
+         prevVowel != "q’",
+         prevVowel != "r",
+         prevVowel != "(r",
+         prevVowel != "(r)",
+         prevVowel != "r)",
+         prevVowel != "t",
+         prevVowel != "t'",
+         prevVowel != "tʃ",
+         prevVowel != "z",
+         prevVowel != "χ",
+         folVowel != "ɢ",
+         folVowel != "b",
+         folVowel != "m",
+         folVowel != "n",
+         folVowel != "r",
+         folVowel != "w",
+         folVowel != "(w",
+         folVowel != "(w)",
+         folVowel != "w)") ->
   final_df
 ```
 
@@ -142,30 +170,40 @@ Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and si
 ---
 # Introducing VOT
 
-Considering a sample of languages, (Ladefoged & Cho 2001) show that VOT measurements do not directly depend on sound types and oppositions. Below is the sub-sample that has ejectives:
-
-.pull-left[
-
-- Apache k, kʰ, k’ 
-
-- Hupa k, kʰ, k’ 
-
-- Navajo k, kʰ, k’ 
-
-- Tlingit k, kʰ, k’ 
-
-- Montana Salish k, k’
-
-- Yapese k, k’
-
-]
+.pull-left[Considering a sample of languages, (Ladefoged & Cho 1999) show that VOT measurements do not directly depend on sound types and oppositions. Below is the sub-sample that has ejectives:]
 
 .pull-right[
-![](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/docs/f_LadefogedCho.png)
+```{r, fig.width=6}
+read_tsv("data/ladefoged_cho.tsv") %>% 
+  filter(lang != "Andi",
+         lang != "Rutul") %>% 
+  mutate(x = factor(paste(lang, sound), levels = paste(lang, sound))) %>% 
+  ggplot(aes(x, value, fill = lang))+
+  geom_col(show.legend = FALSE)+
+  theme_bw()+
+  coord_flip()+
+  labs(x = "", y = "mean VOT (ms)")+
+  theme(text = element_text(size=20))
+```
 ]
 
-In our talk (and study), we want to consider how East Caucasian languages perform in terms of VOT, comparing voiceless and ejective stops.
+---
+# Introducing VOT
+.pull-left[
+In our talk (and study), we want to consider how East Caucasian languages perform in terms of VOT, comparing voiceless and ejective stops.]
 
+.pull-right[
+```{r, fig.width=6}
+read_tsv("data/ladefoged_cho.tsv") %>% 
+  mutate(x = factor(paste(lang, sound), levels = paste(lang, sound))) %>% 
+  ggplot(aes(x, value, fill = lang))+
+  geom_col(show.legend = FALSE)+
+  theme_bw()+
+  coord_flip()+
+  labs(x = "", y = "mean VOT (ms)")+
+  theme(text = element_text(size=20))
+```
+]
 ---
 class: inverse, center, middle
 
@@ -335,7 +373,7 @@ class: inverse, center, middle
 - 8 Mehwebs, 10 Kinas (Rutul), 9 Zilos (Andi)
 
 
-- Annotation in Praat by K. Filatov, V. Ivanova, A. Kopeckiy, G. Moroz, M. Sheyanova?, I. Sieber, A. Zakirova, V. Zhigulskaya
+- Annotation in Praat by K. Filatov, V. Ivanova, A. Kopeckiy, G. Moroz, M. Sheyanova, I. Sieber, A. Zakirova, V. Zhigulskaya
 
 
 - Data extraction with [**Praat Script by S. Grawunder**](https://raw.githubusercontent.com/agricolamz/VOT_talk/master/segment_durations_1f.praat)
@@ -621,8 +659,8 @@ final_df %>%
 --
 
   - we need selective re-annotation and to compare the annotations and calculate
-  - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
-  - agreement for time segmentation that we annotated (e. g. **??**). --
+  - agreement per each of the features that we annotated (**Cohen’s kappa**);
+  - agreement for time segmentation that we annotated (standard deviation). --
 Eventually, gross mistakes in annotation are corrected by Garik, Vasilisa and Sven.
 
 --
