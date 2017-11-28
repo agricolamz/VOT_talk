@@ -660,7 +660,7 @@ final_df %>%
 
   - we need selective re-annotation and to compare the annotations and calculate
       - agreement per each of the features that we annotated (e. g. **Cohen's or Fleiss’s kappa**);
-      - agreement for time segmentation that we annotated (e. g. **St Dev**). --
+      - agreement for time segmentation that we annotated (e. g. **St Dev**).
 
 --
 
