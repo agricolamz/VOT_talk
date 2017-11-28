@@ -1,19 +1,19 @@
 lang	sound	value	id
 Tlingit	k	28	1
 Apache	k	31	2
-Rutul	k'	43	3
+→ Rutul	k'	43	3
 Hupa	k	44	4
 Navajo	k	45	5
 Apache	k'	60	6
-Rutul	k	67	7
+→ Rutul	k	67	7
 Apache	kʰ	80	8
 Hupa	k'	80	9
 Hupa	kʰ	84	10
 Tlingit	k'	84	11
-Andi	k	90	12
+→ Andi	k	90	12
 Navajo	k'	94	13
-Andi	k'	114	14
-Andi	kː	121	15
+→Andi	k'	114	14
+→Andi	kː	121	15
 Tlingit	kʰ	128	16
-Andi	k'ː	139	17
+→ Andi	k'ː	139	17
 Navajo	kʰ	154	18
