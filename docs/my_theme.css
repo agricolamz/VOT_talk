@@ -2,15 +2,25 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
 
-body { font-family: 'Brill', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
+body { 
+  font-family: 'Brill', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  font-size: large;
+}
 h1, h2, h3 {
   font-family: 'Yanone Kaffeesatz';
   font-weight: normal;
 }
+
 a, a > code {
   color: rgb(15, 125, 193);
   text-decoration: none;
 }
+
+p {font-size: x-large}
+
+li {font-size: x-large}
+
+
 .footnote {
   position: absolute;
   bottom: 3em;

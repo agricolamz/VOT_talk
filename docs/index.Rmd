@@ -134,7 +134,8 @@ final_df %>%
   ggplot(aes(Language, value))+
   geom_boxplot()+
   theme_bw()+
-  theme(text = element_text(size=20), legend.position="bottom")+
+  theme(text = element_text(size=20),
+        legend.position="bottom")+
   labs(y = "Time (ms)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
                        "speakers"))+
@@ -160,7 +161,6 @@ In 1964, Lisker and Abramson "proposed, with acoustic data from 11 languages, th
 ]
 
 ---
-# Introducing VOT
 
 Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and simple) measure, even if not a universal discriminator. Examples of distinctions that are not covered are:
 - aspirated voiced in Hindi: pʰ, p, b and bʰ. 
@@ -176,7 +176,6 @@ Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and si
 - ejectives: see next slide
 
 ---
-# Introducing VOT
 
 .pull-left[Considering a sample of languages, (Ladefoged & Cho 1999) show that VOT measurements do not directly depend on sound types and oppositions. Below is the sub-sample that has ejectives:]
 
@@ -185,15 +184,13 @@ Abramson & Whalen (2017) argue that VOT is a cross-linguistically useful (and si
 ]
 
 ---
-# Introducing VOT
-
 .pull-left[Considering a sample of languages, (Ladefoged & Cho 1999) show that VOT measurements do not directly depend on sound types and oppositions. Below is the sub-sample that has ejectives:]
 
 .pull-right[
 ```{r, fig.width=6}
 read_tsv("data/ladefoged_cho.tsv") %>% 
-  filter(lang != "Andi",
-         lang != "Rutul") %>% 
+  filter(lang != "→ Andi",
+         lang != "→ Rutul") %>% 
   mutate(x = factor(paste(lang, sound), levels = paste(lang, sound))) %>% 
   ggplot(aes(x, value, fill = lang))+
   geom_col(show.legend = FALSE)+
@@ -205,7 +202,7 @@ read_tsv("data/ladefoged_cho.tsv") %>%
 ]
 
 ---
-# Introducing VOT
+
 .pull-left[
 In our talk (and study), we want to consider how East Caucasian languages perform in terms of VOT, comparing voiceless and ejective stops.]
 
@@ -411,7 +408,8 @@ final_df %>%
   ggplot(aes(c_type, closdur, fill = Language, label = stop_label))+
   geom_boxplot()+
   theme_bw()+
-  theme(legend.position="bottom")+
+  theme(legend.position="bottom",
+        text = element_text(size=20))+
   facet_grid(Gender~poa, scale = "free_x", margins = "Gender")+
   labs(y = "CD (ms)", x = "",
              caption = paste("Based on",
@@ -427,7 +425,8 @@ final_df %>%
   ggplot(aes(c_type, VOT, fill = Language, label = stop_label))+
   geom_boxplot()+
   theme_bw()+
-  theme(legend.position="bottom")+
+  theme(text = element_text(size=20),
+        legend.position="bottom")+
   facet_grid(Gender~poa, scale = "free_x", margins = "Gender")+
   labs(y = "VOT (ms)", x = "",
              caption = paste("Based on",
@@ -444,7 +443,8 @@ final_df %>%
   geom_point(aes(color = Language), alpha = 0.2)+
   stat_ellipse()+
   theme_bw()+
-  theme(legend.position="bottom")+
+  theme(text = element_text(size=20),
+        legend.position="bottom")+
   facet_grid(Gender~poa, scale = "free_x", margins = "Gender")+
   labs(y = "CD (ms)", x = "", caption = paste("Based on",
                        length(unique(results$filename)),
@@ -454,91 +454,82 @@ final_df %>%
 ---
 class: inverse, center, middle
 
-# Affricates: exploratory visualisation
+# Relative values: measure / (CD + VOT)
 
 ---
 
-# Absolute values of CD (medial)
+# Relative values: CD / (CD + VOT)
+
 ```{r}
 final_df %>% 
-  filter(position == "medial", affric == "affricate") %>%
-  ggplot(aes(stop, closdur, fill = Language, label = stop_label))+
+  filter(position == "medial", affric == "plain") %>%
+  mutate(rel_cd = closdur/totdur,
+         rel_vot = VOT/totdur) %>%
+  ggplot(aes(c_type, rel_cd, fill = Language, label = stop))+
   geom_boxplot()+
   theme_bw()+
   theme(legend.position="bottom")+
-  facet_grid(Gender~., scale = "free_x", margins = "Gender")+
-  labs(y = "CD (ms)", x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))
+  facet_grid(Gender~poa, scale = "free_x")+
+  labs(y = "relative value CD", x = "")
 ```
 
 ---
-# Absolute values of VOT (medial)
+
+# Relative values: VOT / (CD + VOT)
+
 ```{r}
 final_df %>% 
-  filter(position == "medial", affric == "affricate") %>%
-  ggplot(aes(stop, VOT, fill = Language, label = stop_label))+
+  filter(position == "medial", affric == "plain") %>%
+  mutate(rel_cd = closdur/totdur,
+         rel_vot = VOT/totdur) %>%
+  ggplot(aes(c_type, rel_vot, fill = Language, label = stop))+
   geom_boxplot()+
   theme_bw()+
   theme(legend.position="bottom")+
-  facet_grid(Gender~., scale = "free_x", margins = "Gender")+
-  labs(y = "VOT (ms)", x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))
+  facet_grid(Gender~poa, scale = "free_x")+
+  labs(y = "relative value CD", x = "")
 ```
 
----
-# Absolute values of CD ~ VOT (medial)
-```{r}
-final_df %>% 
-  filter(position == "medial", affric == "affricate") %>%
-  ggplot(aes(closdur, VOT, fill = Language, label = stop_label))+
-  geom_point(aes(color = Language), alpha = 0.2)+
-  stat_ellipse()+
-  theme_bw()+
-  theme(legend.position="bottom")+
-  facet_grid(Gender~., scale = "free_x", margins = "Gender")+
-  labs(x = "CD (ms)", y = "VOT (ms)", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))
-```
 
 ---
 class: inverse, center, middle
 
-# Affricates: what if we treat VOT as a duration of postfricative part?
+# Relative values: m / vowel duration
 
 ---
 
-# Absolute values of VOT (medial)
+# Relative values: CD / vowel duration
+
 ```{r}
 final_df %>% 
-  filter(position == "medial", affric == "affricate") %>%
-  ggplot(aes(stop, postfric, fill = Language, label = stop_label))+
+  filter(position == "medial", affric == "plain") %>%
+  mutate(rel_cd = closdur/folVowDur,
+         rel_vot = VOT/folVowDur) %>%
+  ggplot(aes(c_type, rel_cd, fill = Language, label = stop))+
   geom_boxplot()+
   theme_bw()+
   theme(legend.position="bottom")+
-  facet_grid(Gender~., scale = "free_x", margins = "Gender")+
-  labs(y = "VOT (ms)", x = "", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))
+  facet_grid(Gender~poa, scale = "free_x")+
+  labs(y = "relative value CD", x = "")
 ```
 
 ---
-# Absolute values of CD ~ VOT (medial)
+
+# Relative values: VOT / vowel duration
+
 ```{r}
 final_df %>% 
-  filter(position == "medial", affric == "affricate") %>%
-  ggplot(aes(closdur, postfric, fill = Language, label = stop_label))+
-  geom_point(aes(color = Language), alpha = 0.2)+
-  stat_ellipse()+
+  filter(position == "medial", affric == "plain") %>%
+  mutate(rel_cd = closdur/folVowDur,
+         rel_vot = VOT/folVowDur) %>%
+  ggplot(aes(c_type, rel_vot, fill = Language, label = stop))+
+  geom_boxplot()+
   theme_bw()+
   theme(legend.position="bottom")+
-  facet_grid(Gender~., scale = "free_x", margins = "Gender")+
-  labs(x = "CD (ms)", y = "VOT (ms)", caption = paste("Based on",
-                       length(unique(results$filename)),
-                       "speakers"))
+  facet_grid(Gender~poa, scale = "free_x")+
+  labs(y = "relative value CD", x = "")
 ```
+
 
 
 ---
@@ -558,7 +549,9 @@ final_df %>%
 --
 : _q_ or _q͡χ_?
 
---
+---
+# Methodological issues
+
 
 - different contexts
 --
