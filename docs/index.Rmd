@@ -621,15 +621,8 @@ final_df %>%
 --
 
   - we need selective re-annotation and to compare the annotations and calculate
-  - agreement per each of the features that we annotated (e. g. **Cohen’s kappa**);
-  - agreement for time segmentation that we annotated (e. g. **??**). --
-Eventually, gross mistakes in annotation are corrected by Garik, Vasilisa and Sven.
-
---
-
-- coding inconsistency
---
-: we code with **f** burst of the stops and fricative part of the affricates.
+      - agreement per each of the features that we annotated (e. g. **Cohen's or Fleiss’s kappa**);
+      - agreement for time segmentation that we annotated (e. g. **St Dev**). --
 
 --
 
