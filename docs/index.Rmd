@@ -506,7 +506,7 @@ final_df %>%
 ---
 class: inverse, center, middle
 
-# Relative values: m / vowel duration
+# Relative values: measure / vowel duration
 
 ---
 
@@ -520,6 +520,7 @@ final_df %>%
   ggplot(aes(c_type, rel_cd, fill = Language, label = stop))+
   geom_boxplot()+
   theme_bw()+
+  ylim(c(0,3))+
   theme(legend.position="bottom")+
   facet_grid(Gender~poa, scale = "free_x")+
   labs(y = "relative value CD", x = "")
@@ -537,6 +538,7 @@ final_df %>%
   ggplot(aes(c_type, rel_vot, fill = Language, label = stop))+
   geom_boxplot()+
   theme_bw()+
+  ylim(c(0,3))+
   theme(legend.position="bottom")+
   facet_grid(Gender~poa, scale = "free_x")+
   labs(y = "relative value CD", x = "")
