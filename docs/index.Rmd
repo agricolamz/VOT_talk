@@ -452,7 +452,7 @@ final_df %>%
 final_df %>% 
   filter(position == "medial", affric == "plain") %>%
   ggplot(aes(closdur, VOT, label = stop_label, group = Language))+
-  geom_point(aes(color = Language), alpha = 0.2)+
+  geom_point(aes(color = Language), alpha = 0.4)+
   stat_ellipse()+
   theme_bw()+
   theme(text = element_text(size=20),
